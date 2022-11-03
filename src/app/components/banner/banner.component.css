@@ -1,0 +1,11 @@
+#banner1 {
+    border-radius: 10px;
+    width: 85%;
+    height: 450px;
+    display: block;
+    margin: 4px auto auto;
+   position: relative;
+    z-index: -1;
+    
+    
+}
