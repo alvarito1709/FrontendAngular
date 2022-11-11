@@ -4,7 +4,6 @@
     padding-left: 45px;
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: #181a1b;
     width: 85%;
     min-height: 10px;
     color: white;
@@ -12,7 +11,7 @@
     margin: 0% auto 2px;
     border: 1px solid white;
     border-radius: 10px;
-    z-index: -1;
+    z-index: 0;
     position: relative;
     
 
@@ -40,4 +39,29 @@
     padding: 15px;
     border-radius: 10px;
 
+}
+
+.card{
+    margin: 20px;
+   text-align: center;
+   border-color: #181a1b;
+   
+}
+
+.row{
+    justify-content: center;
+   align-items: center;
+   display: flex;
+}
+#subtituloExperiencia{
+    margin-left: 100px;
+    font-style: italic;
+    color: whitesmoke;
+    
+}
+hr{
+    height: 4px;
+    background-color: whitesmoke;
+    margin-right: 15%;
+    margin-left: 15%;
 }

@@ -1,0 +1,32 @@
+hr{
+    height: 5px;
+    background-color: #F878F2;
+    margin-right: 15%;
+    margin-left: 15%;
+    background-color: white;
+}
+#subtituloExperiencia{
+    margin-left: 100px;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    
+}
+
+.progress{
+    margin-bottom: 10px;
+    margin-left: 100px;
+    width: 70%;
+    
+}
+.skillTitle{
+    text-align: right;
+    margin-right: 350px;
+    margin-top: 60px;
+    color: whitesmoke;
+}
+.skillImage{
+    height: 40px;
+    border-radius: 100%;
+    
+}
