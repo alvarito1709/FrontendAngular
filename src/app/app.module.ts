@@ -11,12 +11,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './components/login/login.component';
+import { LanguagesComponent } from './components/languages/languages.component';
 
 
-const appRoutes: Routes = [
-{path: '', component: AppComponent},
-{path: 'contacto', component: ContactoComponent}
-]
+
 
 @NgModule({
   declarations: [
@@ -28,11 +27,12 @@ const appRoutes: Routes = [
     FooterComponent,
     ContactoComponent,
     SkillsComponent,
+    LoginComponent,
+    LanguagesComponent,
     
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes, {enableTracing:true}),
     AppRoutingModule,
   ],
   providers: [],
