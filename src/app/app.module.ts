@@ -15,6 +15,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LanguagesComponent } from './components/languages/languages.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { Error404Component } from './components/error404/error404.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
 
 
 
@@ -33,6 +34,7 @@ import { Error404Component } from './components/error404/error404.component';
     LanguagesComponent,
     InicioComponent,
     Error404Component,
+    ProyectosComponent,
     
   ],
   imports: [

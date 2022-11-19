@@ -1,200 +1,220 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:700);
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  background: #ecf0f1;
-  color: #444;
-  font-family: "Lato", Tahoma, Geneva, sans-serif;
-  font-size: 16px;
-  padding: 10px;
-}
-
-.set-size {
-  font-size: 10em;
-}
-
-.charts-container:after {
-  clear: both;
-  content: "";
-  display: table;
-  
-}
-
-.pie-wrapper {
-  height: 1em;
-  width: 1em;
-  float: left;
-  margin: 15px;
+.progress {
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  background: none;
+  margin: 0 auto;
+  box-shadow: none;
   position: relative;
 }
-.pie-wrapper:nth-child(3n+1) {
-  clear: both;
-}
-.pie-wrapper .pie {
-  height: 100%;
+.progress:after {
+  content: "";
   width: 100%;
-  clip: rect(0, 1em, 1em, 0.5em);
-  left: 0;
+  height: 100%;
+  border-radius: 50%;
+  border: 7px solid #eee;
   position: absolute;
   top: 0;
-}
-.pie-wrapper .pie .half-circle {
-  height: 100%;
-  width: 100%;
-  border: 0.1em solid #3498db;
-  border-radius: 50%;
-  clip: rect(0, 0.5em, 1em, 0);
   left: 0;
+}
+.progress > span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
   position: absolute;
   top: 0;
+  z-index: 1;
 }
-.pie-wrapper .label {
-  background: #34495e;
-  border-radius: 50%;
-  bottom: 0.4em;
-  color: #ecf0f1;
-  cursor: default;
-  display: block;
-  font-size: 0.25em;
-  left: 0.4em;
-  line-height: 2.8em;
-  position: absolute;
-  right: 0.4em;
-  text-align: center;
-  top: 0.4em;
+.progress .progress-left {
+  left: 0;
 }
-.pie-wrapper .label .smaller {
-  color: #bdc3c7;
-  font-size: 0.45em;
-  padding-bottom: 20px;
-  vertical-align: super;
-}
-.pie-wrapper .shadow {
-  height: 100%;
+.progress .progress-bar {
   width: 100%;
-  border: 0.1em solid #bdc3c7;
-  border-radius: 50%;
-}
-.pie-wrapper.style-2 .label {
+  height: 100%;
   background: none;
-  color: #7f8c8d;
+  border-width: 7px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+  border-color: #ffb43e;
 }
-.pie-wrapper.style-2 .label .smaller {
-  color: #bdc3c7;
+.progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 75px;
+  border-bottom-right-radius: 75px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
 }
-.pie-wrapper.progress-30 .pie .half-circle {
-  border-color: #3498db;
+.progress .progress-right {
+  right: 0;
 }
-.pie-wrapper.progress-30 .pie .left-side {
-  transform: rotate(108deg);
+.progress .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 75px;
+  border-bottom-left-radius: 75px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
 }
-.pie-wrapper.progress-30 .pie .right-side {
-  display: none;
+.progress .progress-value {
+  display: flex;
+  border-radius: 50%;
+  font-size: 36px;
+  text-align: center;
+  line-height: 20px;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  font-weight: 300;
+  padding-left: 40px;
+  color: whitesmoke;
 }
-.pie-wrapper.progress-60 .pie {
-  clip: rect(auto, auto, auto, auto);
+.progress .progress-value div {
+  margin-top: 10px;
 }
-.pie-wrapper.progress-60 .pie .half-circle {
-  border-color: #9b59b6;
-}
-.pie-wrapper.progress-60 .pie .left-side {
-  transform: rotate(216deg);
-}
-.pie-wrapper.progress-60 .pie .right-side {
-  transform: rotate(180deg);
-}
-.pie-wrapper.progress-90 .pie {
-  clip: rect(auto, auto, auto, auto);
-}
-.pie-wrapper.progress-90 .pie .half-circle {
-  border-color: #e67e22;
-}
-.pie-wrapper.progress-90 .pie .left-side {
-  transform: rotate(324deg);
-}
-.pie-wrapper.progress-90 .pie .right-side {
-  transform: rotate(180deg);
-}
-.pie-wrapper.progress-45 .pie .half-circle {
-  border-color: #1abc9c;
-}
-.pie-wrapper.progress-45 .pie .left-side {
-  transform: rotate(162deg);
-}
-.pie-wrapper.progress-45 .pie .right-side {
-  display: none;
-}
-.pie-wrapper.progress-75 .pie {
-  clip: rect(auto, auto, auto, auto);
-}
-.pie-wrapper.progress-75 .pie .half-circle {
-  border-color: #8e44ad;
-}
-.pie-wrapper.progress-75 .pie .left-side {
-  transform: rotate(270deg);
-}
-.pie-wrapper.progress-75 .pie .right-side {
-  transform: rotate(180deg);
-}
-.pie-wrapper.progress-95 .pie {
-  clip: rect(auto, auto, auto, auto);
-}
-.pie-wrapper.progress-95 .pie .half-circle {
-  border-color: #e74c3c;
-}
-.pie-wrapper.progress-95 .pie .left-side {
-  transform: rotate(342deg);
-}
-.pie-wrapper.progress-95 .pie .right-side {
-  transform: rotate(180deg);
+.progress .progress-value span {
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
-.pie-wrapper--solid {
-  border-radius: 50%;
-  overflow: hidden;
+/* This for loop creates the 	necessary css animation names 
+Due to the split circle of progress-left and progress right, we must use the animations on each side. 
+*/
+.progress[data-percentage="10"] .progress-right .progress-bar {
+  animation: loading-1 1.5s linear forwards;
 }
-.pie-wrapper--solid:before {
-  border-radius: 0 100% 100% 0/50%;
-  content: "";
-  display: block;
-  height: 100%;
-  margin-left: 50%;
-  transform-origin: left;
+.progress[data-percentage="10"] .progress-left .progress-bar {
+  animation: 0;
 }
-.pie-wrapper--solid .label {
-  background: transparent;
+
+.progress[data-percentage="20"] .progress-right .progress-bar {
+  animation: loading-2 1.5s linear forwards;
 }
-.pie-wrapper--solid.progress-65 {
-  background: linear-gradient(to right, #e67e22 50%, #34495e 50%);
+.progress[data-percentage="20"] .progress-left .progress-bar {
+  animation: 0;
 }
-.pie-wrapper--solid.progress-65:before {
-  background: #e67e22;
-  transform: rotate(126deg);
+
+.progress[data-percentage="30"] .progress-right .progress-bar {
+  animation: loading-3 1.5s linear forwards;
 }
-.pie-wrapper--solid.progress-25 {
-  background: linear-gradient(to right, #9b59b6 50%, #34495e 50%);
+.progress[data-percentage="30"] .progress-left .progress-bar {
+  animation: 0;
 }
-.pie-wrapper--solid.progress-25:before {
-  background: #34495e;
-  transform: rotate(-270deg);
+
+.progress[data-percentage="40"] .progress-right .progress-bar {
+  animation: loading-4 1.5s linear forwards;
 }
-.pie-wrapper--solid.progress-88 {
-  background: linear-gradient(to right, #3498db 50%, #34495e 50%);
+.progress[data-percentage="40"] .progress-left .progress-bar {
+  animation: 0;
 }
-.pie-wrapper--solid.progress-88:before {
-  background: #3498db;
-  transform: rotate(43.2deg);
+
+.progress[data-percentage="50"] .progress-right .progress-bar {
+  animation: loading-5 1.5s linear forwards;
 }
-.barras{
-    margin-top: 50px;
-    margin-bottom: 100px;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    
+.progress[data-percentage="50"] .progress-left .progress-bar {
+  animation: 0;
+}
+
+.progress[data-percentage="60"] .progress-right .progress-bar {
+  animation: loading-5 1.5s linear forwards;
+}
+.progress[data-percentage="60"] .progress-left .progress-bar {
+  animation: loading-1 1.5s linear forwards 1.5s;
+}
+
+.progress[data-percentage="70"] .progress-right .progress-bar {
+  animation: loading-5 1.5s linear forwards;
+}
+.progress[data-percentage="70"] .progress-left .progress-bar {
+  animation: loading-2 1.5s linear forwards 1.5s;
+}
+
+.progress[data-percentage="80"] .progress-right .progress-bar {
+  animation: loading-5 1.5s linear forwards;
+}
+.progress[data-percentage="80"] .progress-left .progress-bar {
+  animation: loading-3 1.5s linear forwards 1.5s;
+}
+
+.progress[data-percentage="90"] .progress-right .progress-bar {
+  animation: loading-5 1.5s linear forwards;
+}
+.progress[data-percentage="90"] .progress-left .progress-bar {
+  animation: loading-4 1.5s linear forwards 1.5s;
+}
+
+.progress[data-percentage="100"] .progress-right .progress-bar {
+  animation: loading-5 1.5s linear forwards;
+}
+.progress[data-percentage="100"] .progress-left .progress-bar {
+  animation: loading-5 1.5s linear forwards 1.5s;
+}
+
+@keyframes loading-1 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(36);
+    transform: rotate(36deg);
+  }
+}
+@keyframes loading-2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(72);
+    transform: rotate(72deg);
+  }
+}
+@keyframes loading-3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(108);
+    transform: rotate(108deg);
+  }
+}
+@keyframes loading-4 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(144);
+    transform: rotate(144deg);
+  }
+}
+@keyframes loading-5 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180);
+    transform: rotate(180deg);
+  }
+}
+.progress {
+  margin-bottom: 1em;
+}
+
+.db{
+
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 250px;
+
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  color: #eee;
 }
