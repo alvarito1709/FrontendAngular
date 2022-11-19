@@ -13,6 +13,8 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { LanguagesComponent } from './components/languages/languages.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { Error404Component } from './components/error404/error404.component';
 
 
 
@@ -29,6 +31,8 @@ import { LanguagesComponent } from './components/languages/languages.component';
     SkillsComponent,
     LoginComponent,
     LanguagesComponent,
+    InicioComponent,
+    Error404Component,
     
   ],
   imports: [

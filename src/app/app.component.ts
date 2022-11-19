@@ -9,14 +9,12 @@ import { ModalService } from './service/modal.service';
 })
 export class AppComponent {
   title = 'frontendPortafolioWeb';
-  modalSwitch: boolean = false;
-  loginSwitch: boolean = false;
+  
 
   constructor(private modal:ModalService){}
 
   ngOnInit(){
-    this.modal.$modal.subscribe((valor => this.modalSwitch = valor));
-    this.modal.$login.subscribe((valor => this.loginSwitch = valor));
+  
   }
 
 
