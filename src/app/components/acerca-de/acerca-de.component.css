@@ -65,3 +65,18 @@ hr{
     margin-right: 15%;
     margin-left: 15%;
 }
+.material-icons{
+    color:  whitesmoke;
+    font-size: 22px;
+    
+    
+}
+#iconos {
+
+display: flex;
+justify-content: flex-end;
+
+z-index: 1;
+cursor: pointer;
+
+}

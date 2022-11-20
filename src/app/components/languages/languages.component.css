@@ -218,3 +218,18 @@ Due to the split circle of progress-left and progress right, we must use the ani
   justify-content: center;
   color: #eee;
 }
+.material-icons{
+  color:  whitesmoke;
+  font-size: 22px;
+  
+  
+}
+#iconos {
+
+display: flex;
+justify-content: flex-end;
+z-index: 1;
+cursor: pointer;
+padding-right: 150px;
+
+}

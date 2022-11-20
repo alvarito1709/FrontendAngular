@@ -64,6 +64,20 @@ margin-top: 25px;
     padding-top: 1%;
 
 }
+.material-icons{
+    color:  whitesmoke;
+    font-size: 22px;
+    
+    
+}
+#iconos {
+position: absolute;
+float: left;
+z-index: 1;
+cursor: pointer;
+margin-left: 300px;
+}
+
 
 
 
