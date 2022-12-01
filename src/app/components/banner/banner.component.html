@@ -2,21 +2,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@1&display=swap" rel="stylesheet">
 <div class="container">
-    <div class="row">
+    <div class="row" *ngFor="let mostrarInfo of info">
         <div class="col-8 align-self-center order-2">
             <!-- informacion -->
             <div class="saludo" >
-               <h2 id="primeraLinea"> Desarrollador web full stack. </h2>
+               <h2 id="primeraLinea"> {{mostrarInfo.titulo}} </h2>
                <!-- foto de perfil -->
                 <div class="col-2 align-self-end order-1">
                     <section class="profilePic">
-                        <img src= "https://www.dl.dropboxusercontent.com/s/piyo0jx5r7mqoa7/IMG_20220716_194606_847.jpg?dl=0" alt="imagen de perfil" id="imagen_de_perfil">
+                        <img [src]="mostrarInfo.foto" alt="imagen de perfil" id="imagen_de_perfil">
                     </section>  
                     </div>
-                <h3 id="segundaLinea"> Diseño responsivo. HTML, CCS, JS & SQL</h3>
+                <h3 id="segundaLinea">{{mostrarInfo.habilidades}} </h3>
                 
             <h3 id="Name">
-            Alvaro Ortiz.
+            {{mostrarInfo.nombre}}
             </h3>
             </div>
             </div>
@@ -29,7 +29,7 @@
                 <span class="material-icons">
                     delete_forever
                     </span></div> 
-                <img src="https://www.dl.dropboxusercontent.com/s/9b7qxszjvr9gj5x/computadora.jpg?dl=0" alt="computadora" id="imagen_banner">
+                <img [src]="mostrarInfo.banner" alt="computadora" id="imagen_banner">
                 
             </div>
     </div>

@@ -81,7 +81,7 @@
 /* This for loop creates the 	necessary css animation names 
 Due to the split circle of progress-left and progress right, we must use the animations on each side. 
 */
-.progress[data-percentage="10"] .progress-right .progress-bar {
+.progress[porcentaje-10] .progress-right .progress-bar {
   animation: loading-1 1.5s linear forwards;
 }
 .progress[data-percentage="10"] .progress-left .progress-bar {
@@ -206,13 +206,13 @@ Due to the split circle of progress-left and progress right, we must use the ani
 }
 
 .db{
+margin-top: 100px;
+margin-bottom: 100px;
+justify-items: center;
 
-  margin-top: 100px;
-  margin-bottom: 100px;
-  margin-left: 250px;
 
 }
-
+ 
 .title{
   display: flex;
   justify-content: center;
@@ -230,6 +230,5 @@ display: flex;
 justify-content: flex-end;
 z-index: 1;
 cursor: pointer;
-padding-right: 150px;
 
 }

@@ -1,16 +1,16 @@
-
+<!-- Componente de soft skills con los circulos de progreso -->
 <hr>
-    <div class="db">
-        <div class="row">
-            <div id="iconos"><span class="material-icons">
-                create
-                </span>
-                <span class="material-icons">
-                    delete_forever
-                    </span></div> 
-            <div class="col-sm-3 col-md-2">
-                <h5 class="title">Ingles</h5>
-                <div class="progress" data-percentage="60">
+    <div class="container db" >
+        <div id="iconos"><span class="material-icons">
+            create
+            </span>
+            <span class="material-icons">
+                delete_forever
+                </span></div> 
+        <div class="row" >
+            <div class="col" *ngFor="let habilidades of habilidad">
+                <h5 class="title">{{habilidades.nombre}}</h5>
+                <div class="progress" attr.data-percentage = "{{habilidades.porcentaje}}">
                     <span class="progress-left">
                         <span class="progress-bar"></span>
                     </span>
@@ -19,66 +19,13 @@
                     </span>
                     <div class="progress-value">
                         <div>
-                            65%<br>
-                            <span>completado</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-md-2">
-                <h5 class="title">Excel</h5>
-                <div class="progress" data-percentage="40">
-                    <span class="progress-left">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <span class="progress-right">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <div class="progress-value">
-                        <div>
-                            40%<br>
+                            {{habilidades.porcentaje}}%<br>
                             <span>completado</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-sm-3 col-md-2">
-                <h5 class="title">Photoshop</h5>
-                <div class="progress" data-percentage="60">
-                    <span class="progress-left">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <span class="progress-right">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <div class="progress-value">
-                        <div>
-                            60%<br>
-                            <span>completado</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="col-sm-3 col-md-2">
-                <h5 class="title">Paquete office</h5>
-                <div class="progress" data-percentage="80">
-                    <span class="progress-left">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <span class="progress-right">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <div class="progress-value">
-                        <div>
-                            80%<br>
-                            <span>completado</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
             
                 

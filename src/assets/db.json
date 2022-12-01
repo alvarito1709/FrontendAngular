@@ -1,0 +1,145 @@
+{
+    "Informacion":[
+        {
+            "titulo": "Desarrollador web full stack.",
+            "habilidades": "Diseño responsivo. HTML, CCS, JS & SQL",
+            "foto": "https://www.dl.dropboxusercontent.com/s/piyo0jx5r7mqoa7/IMG_20220716_194606_847.jpg?dl=0",
+            "nombre": "Alvaro Ortiz.",
+            "banner": "https://www.dl.dropboxusercontent.com/s/9b7qxszjvr9gj5x/computadora.jpg?dl=0"
+        }
+
+    ],
+    "Experiencia":[
+        {
+            "id": 1,
+            "titulo": "Argentina Programa",
+            "descripcion": "Creación de portafolio web.", 
+            "periodo": "Julio 2022 a Enero 2023",
+            "imagen": "https://i.pinimg.com/736x/2e/c1/b8/2ec1b8702e03678d11d4094fe41495be.jpg",
+            "link": "https://www.argentina.gob.ar/economia/conocimiento/argentina-programa#:~:text=%C2%BFQu%C3%A9%20es%20Argentina%20Programa%204.0,del%20software%20y%20la%20tecnolog%C3%ADa."
+        },
+        {
+            "id": 2,
+            "titulo": "Victoria G&G",
+            "descripcion": "Web developer Jr." , 
+            "periodo": "Agosto 2022 - actualidad." ,
+            "imagen": "https://www.dl.dropboxusercontent.com/s/mzpkvc6phvioy9r/IMG-20220408-WA0045.jpg?dl=0" ,
+            "link": "https://www.argentina.gob.ar/economia/conocimiento/argentina-programa#:~:text=%C2%BFQu%C3%A9%20es%20Argentina%20Programa%204.0,del%20software%20y%20la%20tecnolog%C3%ADa."
+            
+        },
+        {
+            "id": 3,
+            "titulo": "Dia% Argentina",
+            "descripcion": "Cajero/Repositor" , 
+            "periodo": "febrero 2021 - agosto 2021" ,
+            "imagen": "https://www.dl.dropboxusercontent.com/s/e6ibszdjw2rj78z/dia.png?dl=0" ,
+            "link": "https://diaonline.supermercadosdia.com.ar/"
+            
+        },
+        {
+            "id": 4,
+            "titulo": "Carrefour Express",
+            "descripcion": "Cajero/Repositor" , 
+            "periodo": "Agosto 2021 - Marzo 2022" ,
+            "imagen": "https://www.dl.dropboxusercontent.com/s/oy1cp4infbvsars/carrefour1.png?dl=0" ,
+            "link": "https://www.carrefour.com.ar/"
+            
+        }
+
+],
+"Educacion":[
+    {
+        "id": 1,
+            "titulo": "Argentina Programa",
+            "descripcion": "Web developer Full Stack Jr.", 
+            "periodo": "Enero 2022 a Enero 2023",
+            "imagen": "https://i.pinimg.com/736x/2e/c1/b8/2ec1b8702e03678d11d4094fe41495be.jpg",
+            "link": "https://www.argentina.gob.ar/economia/conocimiento/argentina-programa#:~:text=%C2%BFQu%C3%A9%20es%20Argentina%20Programa%204.0,del%20software%20y%20la%20tecnolog%C3%ADa."
+
+    },
+    {
+        "id": 2,
+            "titulo": "AFC Cursos",
+            "descripcion": "Community Manager.", 
+            "periodo": "Septiembre 2022 a noviembre 2022",
+            "imagen": "https://www.dl.dropboxusercontent.com/s/n35e3xkgi9rnr0i/AFCcursos.png?dl=0",
+            "link": "https://www.facebook.com/afc2010.cursos"
+
+    },
+    {
+        "id": 3,
+            "titulo": "U.E. Colegio San Agustin",
+            "descripcion": "Bachiller en Ciencias", 
+            "periodo": "septiembre 2009 a julio 2014",
+            "imagen": "https://www.dl.dropboxusercontent.com/s/528ri52c04lf23c/logoSanAgustin.png?dl=0",
+            "link": "https://unidad-educativa-colegio-san-agustin.negocio.site/"
+        }
+],
+"HardSkills":[
+        {
+        "id":1,
+        "nombre":"Javascript",
+        "progreso":"60",
+        "color":"bg-warning",
+        "logo": "https://www.dl.dropboxusercontent.com/s/6tyf6j9pa6vynhs/javascript.png?dl=0"
+    },
+    {
+        "id":2,
+        "nombre":"CCS",
+        "progreso":"80",
+        "color":"bg-info",
+        "logo": "https://www.dl.dropboxusercontent.com/s/1otlg1r5i4a0jpa/CCS1.png?dl=0"
+    },
+    {
+        "id":3,
+        "nombre":"HTML",
+        "progreso":"90",
+        "color":"bg-danger",
+        "logo": "https://www.dl.dropboxusercontent.com/s/l38mcepbyx5x0hs/HTML.png?dl=0"
+    },
+    {
+        "id":4,
+        "nombre":"Angular",
+        "progreso":"50",
+        "color":"bg-danger",
+        "logo":"https://www.dl.dropboxusercontent.com/s/1xr57khxwfzm9c8/angular1.png?dl=0"
+    },
+    {
+        "id":5,
+        "nombre":"Bootstrap",
+        "progreso":"60",
+        "color":"bg-info",
+        "logo":"https://www.dl.dropboxusercontent.com/s/i51tp1169yhyyly/bootstrap.png?dl=0"
+    },
+    {
+        "id":6,
+        "nombre":"MySQL",
+        "progreso": "40",
+        "color":"bg-success",
+        "logo":"https://www.dl.dropboxusercontent.com/s/rwoscedq8nh0fni/MySQL.png?dl=0"
+    }],
+
+    "Languages":[{
+        "id": 1,
+        "nombre": "Ingles",
+        "porcentaje": "30"
+    },
+    {
+        "id": 2,
+        "nombre": "Excel",
+        "porcentaje": "40"
+    },
+    {
+        "id": 3,
+        "nombre": "Photoshop",
+        "porcentaje": "60"
+    },
+    {
+        "id": 4,
+        "nombre": "Paquete Officce",
+        "porcentaje": "80"
+    }
+
+    ]
+
+}

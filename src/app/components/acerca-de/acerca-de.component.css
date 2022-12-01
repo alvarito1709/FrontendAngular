@@ -46,13 +46,10 @@
    text-align: center;
    border-color: #181a1b;
    
+   
 }
 
-.row{
-    justify-content: center;
-   align-items: center;
-   display: flex;
-}
+
 #subtituloExperiencia{
     margin-left: 100px;
     font-style: italic;
@@ -80,3 +77,11 @@ z-index: 1;
 cursor: pointer;
 
 }
+.card-img-top{
+    object-fit: cover;
+    max-height: 175px;
+    min-height: 175px;
+    
+}
+
+ 

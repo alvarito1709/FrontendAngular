@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.service'
 
 @Component({
   selector: 'app-banner',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannerComponent implements OnInit {
 
-  constructor() { }
+  info: any;
+
+  constructor(private data: AcercaDeServiceService) { }
 
   ngOnInit(): void {
+    this.data.getDatos().subscribe((datos=>{
+      return this.info = datos.Informacion;
+     }))
   }
+ 
 
 }

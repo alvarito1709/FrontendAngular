@@ -1,0 +1,49 @@
+<div id="modal">
+    <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+        <div id="close">
+        <input type="checkbox" id="switch" (click)="modificar()" /><label for="switch">Toggle</label>
+      <button type="button" class="btn-close btn-close-white" aria-label="Close"  (click)="closeModal()"> </button>
+    </div>
+        <div *ngIf="modificarToggle == false">
+      <h4>Modificar</h4>
+    </div>
+    <div *ngIf="modificarToggle == true">
+        <h4>Agregar</h4>
+      </div>
+      <div *ngIf="modificarToggle == false">
+        <input name="titulo" placeholder="modifica el titulo" formControlName="titulo" class="name" required />
+        <!-- <div *ngIf= "Nombre?.errors && Nombre?.touched">
+          <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido</p>
+          <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
+        </div> -->
+    
+        <input name="descripcion" placeholder="modifica la descripcion" formControlName="decripcion" class="name"/>
+        <!-- <div *ngIf= "Mail?.errors && Mail?.touched">
+          <p *ngIf="Mail?.hasError('required')"> El mail es requerido</p>
+          <p *ngIf="Mail?.hasError('email')"> El mail debe tener un formato valido</p>
+        </div> -->
+        <input name="fecha" placeholder="Modifica el periodo" formControlName="periodo" class="name"/>
+        <input name="foto" placeholder="imagen de la institucion (link)" formControlName="foto" class="name"/>
+        <input name="link" placeholder="Coloca el link de la institucion" formControlName="link" class="name"/>
+        <input name="submit" class="btn" type="submit" value="Enviar" />
+    </div>
+    <div *ngIf="modificarToggle == true">
+        <input name="titulo" placeholder="Titulo" formControlName="titulo" class="name" required />
+        <!-- <div *ngIf= "Nombre?.errors && Nombre?.touched">
+          <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido</p>
+          <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
+        </div> -->
+    
+        <input name="descripcion" placeholder="Descripcion" formControlName="decripcion" class="name"/>
+        <!-- <div *ngIf= "Mail?.errors && Mail?.touched">
+          <p *ngIf="Mail?.hasError('required')"> El mail es requerido</p>
+          <p *ngIf="Mail?.hasError('email')"> El mail debe tener un formato valido</p>
+        </div> -->
+        <input name="fecha" placeholder="Periodo de cursada" formControlName="periodo" class="name"/>
+        <input name="foto" placeholder="Imagen de la institucion (link)" formControlName="foto" class="name"/>
+        <input name="link" placeholder="Agrega el link de la institucion" formControlName="link" class="name"/>
+        <input name="submit" class="btn" type="submit" value="Enviar" />
+    </div>
+      </form>
+    </div>
+

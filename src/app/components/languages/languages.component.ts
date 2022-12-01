@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.service';
 
 @Component({
   selector: 'app-languages',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./languages.component.css']
 })
 export class LanguagesComponent implements OnInit {
+  habilidad: any;
+  porcentajeCompleto: any;
 
-  constructor() { }
+  constructor(private http:AcercaDeServiceService) { }
 
   ngOnInit(): void {
+    this.http.getDatos().subscribe((dato =>{
+      this.habilidad = dato.Languages;
+    }))
+  }
+  takePercentage(){
+    return this.porcentajeCompleto = this.habilidad.porcentaje;
   }
 
 }

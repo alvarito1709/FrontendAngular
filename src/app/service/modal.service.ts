@@ -9,4 +9,6 @@ export class ModalService {
 
   $modal = new EventEmitter<any>();
   $login = new EventEmitter<any>();
+  $experiencia = new EventEmitter<any>();
+  $educacion = new EventEmitter<any>();
 }

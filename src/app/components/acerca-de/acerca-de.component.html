@@ -2,39 +2,28 @@
 <!-- Seccion "experiencia" -->
 <hr>
 <h3 id="subtituloExperiencia">Experiencia</h3>
-  <section class="container">
-    <div class="row">
-      <div id="iconos"><span class="material-icons">
+  <section class="container" >
+    <div id="iconos"><span class="material-icons" (click)="desplegarModal()">
         create
         </span>
         <span class="material-icons">
             delete_forever
             </span></div> 
-      <div class="col-md-4 col-sm-4 col-lg-4">
-       <div class="card" id="cardID" style="width: 18rem;">
-         <img src="https://i.pinimg.com/736x/2e/c1/b8/2ec1b8702e03678d11d4094fe41495be.jpg" class="card-img-top" alt="Logo Argentina Programa">
+    <div class="row " id="carta">
+      <div class="col-3 sm-6 md-6 lg-6" *ngFor="let data of experiencia">
+       <div class="card text-white bg-dark mb-3" id="cardID" style="width: 15rem; ">
+         <img [src]="data.imagen" class="card-img-top" alt="Logo Argentina Programa" >
            <div class="card-body">
-             <h5 class="card-title">Argentina Programa</h5>
-             <p class="card-text">Creación de portafolio web.
-             <br> Julio 2022 a Enero 2023
+             <h5 class="card-title">{{data.titulo}}</h5>
+             <p class="card-text"> {{data.descripcion}}
+             <br> 
+             {{data.periodo}}
              </p>
-             <a href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa#:~:text=%C2%BFQu%C3%A9%20es%20Argentina%20Programa%204.0,del%20software%20y%20la%20tecnolog%C3%ADa." target="_blank" class="btn btn-dark">Argentina Programa</a>
+             <a href="{{data.link}}" target="_blank" class="btn btn-secondary">{{data.titulo}}</a>
            </div>
     </div>
   </div>
-
-  <div class="col-md-4 col-sm-4 col-lg-4">
-  <div class="card" id="cardID" style="width: 18rem;">
-    <img src="https://www.dl.dropboxusercontent.com/s/mzpkvc6phvioy9r/IMG-20220408-WA0045.jpg?dl=0" class="card-img-top" alt="Logo Victoria G&G" width="90" height="175">
-    <div class="card-body">
-      <h5 class="card-title">Victoria G&G</h5>
-      <p class="card-text">Web developer Jr.
-        <br> Agosto 2022 - actualidad.
-      </p>
-      <a href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa#:~:text=%C2%BFQu%C3%A9%20es%20Argentina%20Programa%204.0,del%20software%20y%20la%20tecnolog%C3%ADa." target="_blank" class="btn btn-dark">Victoria G&G</a>
-       </div>
-      </div>
-   </div>
+ 
  </div>
  
 </section>
@@ -45,22 +34,22 @@
 <!-- Seccion Educación -->
 <h3 id="subtituloExperiencia">Educación</h3>
 <section class="container">
-  <div class="row">
-    <div id="iconos"><span class="material-icons">
-      create
-      </span>
-      <span class="material-icons">
-          delete_forever
-          </span></div> 
-    <div class="col-md-6 col-sm-6 col-lg-4">
-     <div class="card" id="cardID" style="width: 18rem;">
-       <img src="https://i.pinimg.com/736x/2e/c1/b8/2ec1b8702e03678d11d4094fe41495be.jpg" class="card-img-top" alt="Logo Argentina Programa">
+  <div id="iconos"><span class="material-icons" (click)="desplegarModificar()">
+    create
+    </span>
+    <span class="material-icons">
+        delete_forever
+        </span></div> 
+  <div class="row" >
+    <div class="col-md-6 col-sm-6 col-lg-4" *ngFor="let educacionActual of educacion">
+     <div class="card text-white bg-dark mb-3" id="cardID" style="width: 18rem;">
+       <img [src]="educacionActual.imagen" class="card-img-top" alt="Logo Argentina Programa">
          <div class="card-body">
-           <h5 class="card-title">Argentina Programa</h5>
-           <p class="card-text">Web developer full stack Jr.
-           <br> Enero 2022 a Enero 2023
+           <h5 class="card-title">{{educacionActual.titulo}}</h5>
+           <p class="card-text">{{educacionActual.descripcion}}
+           <br> {{educacionActual.periodo}}
            </p>
-           <a href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa#:~:text=%C2%BFQu%C3%A9%20es%20Argentina%20Programa%204.0,del%20software%20y%20la%20tecnolog%C3%ADa." target="_blank" class="btn btn-dark">Argentina Programa</a>
+           <a href={{educacionActual.link}} target="_blank" class="btn btn-secondary">{{educacionActual.titulo}}</a>
            </div>
    </div>
   </div>

@@ -5,12 +5,15 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { Error404Component } from './components/error404/error404.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { ModificarEducacionComponent } from './modals/modificar-educacion/modificar-educacion.component';
+import { ModificarExperienciaComponent } from './modals/modificar-experiencia/modificar-experiencia.component';
 
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'contacto', component: ContactoComponent },
   {path: 'about', component: AcercaDeComponent },
+  {path: 'modal', component: ModificarEducacionComponent},
   { path: '**', component: Error404Component}
 ];
 

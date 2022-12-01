@@ -5,6 +5,7 @@
     <app-acerca-de></app-acerca-de>
     <app-skills></app-skills>
     <app-languages></app-languages>
+    <app-proyectos></app-proyectos>
     <app-footer></app-footer>
     </body>
     <div *ngIf="modalSwitch == true">
@@ -13,3 +14,10 @@
     <div *ngIf="loginSwitch == true">
         <app-login></app-login>
     </div>
+    <div *ngIf="modificarExperiencia == true">
+        <app-modificar-experiencia></app-modificar-experiencia>
+    </div>
+    <div *ngIf="modificarEducacion == true">
+        <app-modificar-educacion></app-modificar-educacion>
+    </div>
+   
