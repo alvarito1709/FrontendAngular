@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/service/modal.service';
+import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +9,14 @@ import { ModalService } from 'src/app/service/modal.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private modal: ModalService) { }
+  redes: any;
+
+  constructor(private modal: ModalService, private http:AcercaDeServiceService) { }
 
   ngOnInit(): void {
+    this.http.getDatos().subscribe((datito =>{
+      this.redes = datito.Redes;
+    }))
   }
   showModal(){
     this.modal.$modal.emit(true)

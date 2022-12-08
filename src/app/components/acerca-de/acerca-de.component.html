@@ -10,7 +10,8 @@
             delete_forever
             </span></div> 
     <div class="row " id="carta">
-      <div class="col-3 sm-6 md-6 lg-6" *ngFor="let data of experiencia">
+      <div class="col-md-6 col-sm-6 col-lg-3" *ngFor="let data of experiencia">
+        <button type="button" class="btn-close btn-close-white" aria-label="Close" id="closeExperiencia"></button>
        <div class="card text-white bg-dark mb-3" id="cardID" style="width: 15rem; ">
          <img [src]="data.imagen" class="card-img-top" alt="Logo Argentina Programa" >
            <div class="card-body">
@@ -42,6 +43,7 @@
         </span></div> 
   <div class="row" >
     <div class="col-md-6 col-sm-6 col-lg-4" *ngFor="let educacionActual of educacion">
+      <button type="button" class="btn-close btn-close-white" aria-label="Close" id="close"></button>
      <div class="card text-white bg-dark mb-3" id="cardID" style="width: 18rem;">
        <img [src]="educacionActual.imagen" class="card-img-top" alt="Logo Argentina Programa">
          <div class="card-body">

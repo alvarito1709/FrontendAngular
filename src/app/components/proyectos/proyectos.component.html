@@ -1,1 +1,29 @@
-
+<hr>
+<div class="container">
+    <div id="iconos"><span class="material-icons" (click)="modificarProyectos()">
+        create
+        </span>
+        <span class="material-icons">
+            delete_forever
+            </span></div> 
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Link</th>
+            
+        </tr>
+        </thead>
+        <tbody class="table-primary" *ngFor=" let proyectos of proyecto">
+        <tr>
+            <th scope="row">{{proyectos.id}}</th>
+            <td>{{proyectos.titulo}}</td>
+            <td>{{proyectos.descripcion}}</td>
+            <td><button type="button" class="btn-close btn-close-black" aria-label="Close" id="closeExperiencia"></button><a target="_blank" href={{proyectos.link}}>{{proyectos.link}}</a></td>
+            
+        </tr>
+        
+    </table>
+</div>

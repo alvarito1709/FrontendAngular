@@ -136,9 +136,48 @@
     },
     {
         "id": 4,
-        "nombre": "Paquete Officce",
+        "nombre": "Paquete Office",
         "porcentaje": "80"
     }
+
+    ],
+
+    "Redes":[ 
+        {
+            "id":1,
+            "red":"instagram",
+            "link":""
+
+    },
+    {
+        "id":2,
+            "red":"github",
+            "link":""
+    },
+    {
+        "id":3,
+            "red":"twitter",
+            "link":""
+    },
+    {
+        "id":4,
+            "red":"codepen",
+            "link":""
+    }
+],
+    "proyectos":[
+        {
+            "id": 1,
+            "titulo":"Task List",
+            "descripcion": "Lista de tareas modificable. Con funciones de agregar, eliminar, modificar, fechas y reminders.",
+            "link": ""
+        },
+        {
+            "id": 2,
+            "titulo": "Portfolio",
+            "descripcion": "Proyecto final integrador para recibir el titulo de Web developer Jr. Argentina Programa. ",
+            "link": "https://github.com/alvarito1709/FrontendAngular"
+        }
 
     ]
 

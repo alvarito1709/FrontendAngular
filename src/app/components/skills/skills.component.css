@@ -49,3 +49,7 @@ z-index: 1;
 cursor: pointer;
 
 }
+.btn-close{
+    float: right;
+    margin-right: 18%;
+}

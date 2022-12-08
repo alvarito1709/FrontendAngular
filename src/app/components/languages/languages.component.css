@@ -203,6 +203,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
 }
 .progress {
   margin-bottom: 1em;
+  z-index: 0;
 }
 
 .db{
@@ -230,5 +231,9 @@ display: flex;
 justify-content: flex-end;
 z-index: 1;
 cursor: pointer;
+
+}
+.btn-close{
+  float: right;
 
 }

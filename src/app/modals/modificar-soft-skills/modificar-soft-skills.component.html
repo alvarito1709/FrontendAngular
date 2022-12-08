@@ -17,21 +17,18 @@
           <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
         </div> -->
     
-        <input name="porcentaje" placeholder="modifica el porcentaje" formControlName="porcentaje" class="name"/>
-        <input name="imagen" placeholder="imagen del skill (link)" formControlName="foto" class="name"/>
-        <input name="color" placeholder="coloca el color (azul, amarillo, rojo, verde)" formControlName="color" class="name"/>
+       
+        <input name="porcentaje" placeholder="Modifica el porcentaje" formControlName="porcentaje" class="name"/>
+        <input name="id" placeholder="Coloca el id del skill" formControlName="id" class="name"/>
         <input name="submit" class="btn" type="submit" value="Enviar" />
     </div>
     <div *ngIf="modificarToggle == true">
-        <input name="titulo" placeholder="Agrega el titulo" formControlName="titulo" class="name" required />
+        <input name="titulo" placeholder="Titulo" formControlName="titulo" class="name" required />
         <!-- <div *ngIf= "Nombre?.errors && Nombre?.touched">
           <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido</p>
           <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
         </div> -->
-    
-        <input name="porcentaje" placeholder="Agrega el porcentaje" formControlName="porcentaje" class="name"/>
-        <input name="imagen" placeholder="Imagen del skill (link)" formControlName="foto" class="name"/>
-        <input name="color" placeholder="Agrega el color (azul, amarillo, rojo, verde)" formControlName="color" class="name"/>
+        <input name="porcentaje" placeholder="Coloca el porcentaje" formControlName="porcentaje" class="name"/>
         <input name="submit" class="btn" type="submit" value="Enviar" />
     </div>
       </form>

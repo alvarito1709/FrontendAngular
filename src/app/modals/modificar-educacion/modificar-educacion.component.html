@@ -12,16 +12,15 @@
       </div>
       <div *ngIf="modificarToggle == false">
         <input name="titulo" placeholder="modifica el titulo" formControlName="titulo" class="name" required />
-        <!-- <div *ngIf= "Nombre?.errors && Nombre?.touched">
-          <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido</p>
-          <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
-        </div> -->
+        <div *ngIf= "titulo?.errors && titulo?.touched">
+          <p *ngIf="titulo?.hasError('required')"> El titulo es requerido</p>
+        </div>
     
         <input name="descripcion" placeholder="modifica la descripcion" formControlName="decripcion" class="name"/>
-        <!-- <div *ngIf= "Mail?.errors && Mail?.touched">
-          <p *ngIf="Mail?.hasError('required')"> El mail es requerido</p>
-          <p *ngIf="Mail?.hasError('email')"> El mail debe tener un formato valido</p>
-        </div> -->
+        <div *ngIf= "descripcion?.errors && descripcion?.touched">
+          <p *ngIf="descripcion?.hasError('required')"> La descripcion es requerida</p>
+          <p *ngIf="descripcion?.hasError('maxLength')"> No debe haber mas de 200 caracteres</p>
+        </div> 
         <input name="fecha" placeholder="Modifica el periodo" formControlName="periodo" class="name"/>
         <input name="foto" placeholder="imagen de la institucion (link)" formControlName="foto" class="name"/>
         <input name="link" placeholder="Coloca el link de la institucion" formControlName="link" class="name"/>
@@ -29,18 +28,20 @@
     </div>
     <div *ngIf="modificarToggle == true">
         <input name="titulo" placeholder="Titulo" formControlName="titulo" class="name" required />
-        <!-- <div *ngIf= "Nombre?.errors && Nombre?.touched">
-          <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido</p>
-          <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
-        </div> -->
+        <div *ngIf= "titulo?.errors && titulo?.touched">
+          <p *ngIf="titulo?.hasError('required')"> El titulo es requerido</p>
+        </div>
     
         <input name="descripcion" placeholder="Descripcion" formControlName="decripcion" class="name"/>
-        <!-- <div *ngIf= "Mail?.errors && Mail?.touched">
-          <p *ngIf="Mail?.hasError('required')"> El mail es requerido</p>
-          <p *ngIf="Mail?.hasError('email')"> El mail debe tener un formato valido</p>
-        </div> -->
+        <div *ngIf= "descripcion?.errors && descripcion?.touched">
+          <p *ngIf="descripcion?.hasError('required')"> La descripcion es requerida</p>
+          <p *ngIf="descripcion?.hasError('maxLength')"> No debe haber mas de 200 caracteres</p>
+        </div> 
         <input name="fecha" placeholder="Periodo de cursada" formControlName="periodo" class="name"/>
         <input name="foto" placeholder="Imagen de la institucion (link)" formControlName="foto" class="name"/>
+        <div *ngIf= "foto?.errors && descripcion?.touched">
+          <p *ngIf="foto?.hasError('required')"> La foto es requerida</p>
+        </div>
         <input name="link" placeholder="Agrega el link de la institucion" formControlName="link" class="name"/>
         <input name="submit" class="btn" type="submit" value="Enviar" />
     </div>

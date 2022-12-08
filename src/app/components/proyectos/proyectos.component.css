@@ -1,0 +1,20 @@
+.container{
+    margin-top: 6%;
+    margin-bottom: 6%;
+}
+.material-icons{
+    color: whitesmoke;
+    font-size: 120%;
+    display: flex;
+}
+#iconos {
+
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1;
+    cursor: pointer;
+}
+.btn-close{
+    float: right;
+    
+}

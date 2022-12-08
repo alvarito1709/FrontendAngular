@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ModalService } from 'src/app/service/modal.service';
 
 @Component({
-  selector: 'app-modificar-hard-skills',
-  templateUrl: './modificar-hard-skills.component.html',
-  styleUrls: ['./modificar-hard-skills.component.css']
+  selector: 'app-modificar-proyectos',
+  templateUrl: './modificar-proyectos.component.html',
+  styleUrls: ['./modificar-proyectos.component.css']
 })
-export class ModificarHardSkillsComponent implements OnInit {
+export class ModificarProyectosComponent implements OnInit {
   form: FormGroup;
   modificarToggle: boolean = false;
 
@@ -24,7 +24,7 @@ export class ModificarHardSkillsComponent implements OnInit {
 
   }
   closeModal(){
-    this.modal.$skills.emit(false);
+    this.modal.$proyecto.emit(false);
 
   }
   

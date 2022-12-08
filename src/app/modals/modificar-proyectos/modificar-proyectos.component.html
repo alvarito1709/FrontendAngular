@@ -11,27 +11,33 @@
         <h4>Agregar</h4>
       </div>
       <div *ngIf="modificarToggle == false">
-        <input name="titulo" placeholder="modifica el titulo" formControlName="titulo" class="name" required />
+        <input name="Nombre" placeholder="modifica el nombre" formControlName="nombre" class="name" required />
         <!-- <div *ngIf= "Nombre?.errors && Nombre?.touched">
           <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido</p>
           <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
         </div> -->
     
-        <input name="porcentaje" placeholder="modifica el porcentaje" formControlName="porcentaje" class="name"/>
-        <input name="imagen" placeholder="imagen del skill (link)" formControlName="foto" class="name"/>
-        <input name="color" placeholder="coloca el color (azul, amarillo, rojo, verde)" formControlName="color" class="name"/>
+        <input name="descripcion" placeholder="modifica la descripcion" formControlName="decripcion" class="name"/>
+        <!-- <div *ngIf= "Mail?.errors && Mail?.touched">
+          <p *ngIf="Mail?.hasError('required')"> El mail es requerido</p>
+          <p *ngIf="Mail?.hasError('email')"> El mail debe tener un formato valido</p>
+        </div> -->
+        <input name="link" placeholder="Coloca el link del proyecto" formControlName="link" class="name"/>
         <input name="submit" class="btn" type="submit" value="Enviar" />
     </div>
     <div *ngIf="modificarToggle == true">
-        <input name="titulo" placeholder="Agrega el titulo" formControlName="titulo" class="name" required />
+        <input name="Nombre" placeholder="agrega el nombre" formControlName="nombre" class="name" required />
         <!-- <div *ngIf= "Nombre?.errors && Nombre?.touched">
           <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido</p>
           <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
         </div> -->
     
-        <input name="porcentaje" placeholder="Agrega el porcentaje" formControlName="porcentaje" class="name"/>
-        <input name="imagen" placeholder="Imagen del skill (link)" formControlName="foto" class="name"/>
-        <input name="color" placeholder="Agrega el color (azul, amarillo, rojo, verde)" formControlName="color" class="name"/>
+        <input name="descripcion" placeholder="agrega una descripcion" formControlName="decripcion" class="name"/>
+        <!-- <div *ngIf= "Mail?.errors && Mail?.touched">
+          <p *ngIf="Mail?.hasError('required')"> El mail es requerido</p>
+          <p *ngIf="Mail?.hasError('email')"> El mail debe tener un formato valido</p>
+        </div> -->
+        <input name="link" placeholder="Coloca el link del proyecto" formControlName="link" class="name"/>
         <input name="submit" class="btn" type="submit" value="Enviar" />
     </div>
       </form>
