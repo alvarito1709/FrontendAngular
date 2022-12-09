@@ -9,6 +9,7 @@ import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.ser
 })
 export class ProyectosComponent implements OnInit {
   proyecto: any;
+  delete: boolean = false;
 
   constructor(private http:AcercaDeServiceService, private modal:ModalService) { }
 
@@ -19,6 +20,9 @@ export class ProyectosComponent implements OnInit {
   }
   modificarProyectos(){
     this.modal.$proyecto.emit(true);
+  }
+  deleteProyecto(){
+    this.delete = !this.delete;
   }
 
 }

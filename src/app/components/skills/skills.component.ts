@@ -9,6 +9,7 @@ import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.ser
 })
 export class SkillsComponent implements OnInit {
   skill: any;
+  delete: boolean = false;
 
   constructor(private http:AcercaDeServiceService, private modal:ModalService) { }
 
@@ -19,6 +20,10 @@ export class SkillsComponent implements OnInit {
   }
   modalSkills(){
     this.modal.$skills.emit(true);
+  }
+  deleteSkill(){
+    this.delete = !this.delete;
+
   }
 
 

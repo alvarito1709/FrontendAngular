@@ -4,12 +4,12 @@
         <div id="iconos"><span class="material-icons" (click)="modificarSkills()">
             create
             </span>
-            <span class="material-icons">
+            <span class="material-icons" (click)="deleteSkill()">
                 delete_forever
                 </span></div> 
         <div class="row" >
             <div class="col" *ngFor="let habilidades of habilidad">
-                <button type="button" class="btn-close btn-close-white" aria-label="Close" id="closeExperiencia"></button>
+                <div *ngIf="delete == true"> <button type="button" class="btn-close btn-close-white" aria-label="Close" id="closeExperiencia"></button></div>
                 <h5 class="title">{{habilidades.nombre}}</h5>
                 <div class="progress" attr.data-percentage = "{{habilidades.porcentaje}}">
                     <span class="progress-left">

@@ -10,6 +10,7 @@ import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.ser
 export class LanguagesComponent implements OnInit {
   habilidad: any;
   porcentajeCompleto: any;
+  delete: boolean = false;
 
   constructor(private http:AcercaDeServiceService, private modal: ModalService) { }
 
@@ -23,6 +24,11 @@ export class LanguagesComponent implements OnInit {
   }
   modificarSkills(){
     this.modal.$soft.emit(true);
+  }
+  deleteSkill(){
+
+    this.delete = !this.delete;
+
   }
 
 }

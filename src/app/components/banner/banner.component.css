@@ -73,7 +73,7 @@ margin-top: 25px;
 #iconos {
 position: absolute;
 float: left;
-z-index: 1;
+z-index: 0;
 cursor: pointer;
 margin-left: 300px;
 }

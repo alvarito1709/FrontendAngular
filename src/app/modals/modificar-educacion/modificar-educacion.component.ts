@@ -44,7 +44,7 @@ export class ModificarEducacionComponent implements OnInit {
     return this.form.get("titulo");
   }
   get descripcion(){
-    return this.form.get("descripcion");
+    return this.form.get("decripcion");
   }
   get periodo(){
     return this.form.get("periodo");

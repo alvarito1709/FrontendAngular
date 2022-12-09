@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
-import { FotoDePerfilComponent } from './components/foto-de-perfil/foto-de-perfil.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { SkillsComponent } from './components/skills/skills.component'
@@ -35,7 +34,6 @@ import { ModificarProyectosComponent } from './modals/modificar-proyectos/modifi
     NavbarComponent,
     BannerComponent,
     AcercaDeComponent,
-    FotoDePerfilComponent,
     FooterComponent,
     ContactoComponent,
     SkillsComponent,

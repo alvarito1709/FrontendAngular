@@ -23,6 +23,9 @@
         </div> 
         <input name="fecha" placeholder="Modifica el periodo" formControlName="periodo" class="name"/>
         <input name="foto" placeholder="imagen de la institucion (link)" formControlName="foto" class="name"/>
+        <div *ngIf= "foto?.errors && foto?.touched">
+          <p *ngIf="foto?.hasError('required')"> La foto es requerida</p>
+        </div>
         <input name="link" placeholder="Coloca el link de la institucion" formControlName="link" class="name"/>
         <input name="submit" class="btn" type="submit" value="Enviar" />
     </div>
@@ -39,7 +42,7 @@
         </div> 
         <input name="fecha" placeholder="Periodo de cursada" formControlName="periodo" class="name"/>
         <input name="foto" placeholder="Imagen de la institucion (link)" formControlName="foto" class="name"/>
-        <div *ngIf= "foto?.errors && descripcion?.touched">
+        <div *ngIf= "foto?.errors && foto?.touched">
           <p *ngIf="foto?.hasError('required')"> La foto es requerida</p>
         </div>
         <input name="link" placeholder="Agrega el link de la institucion" formControlName="link" class="name"/>

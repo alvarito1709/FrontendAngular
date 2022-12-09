@@ -11,6 +11,8 @@ export class AcercaDeComponent implements OnInit {
 
   experiencia: any;
   educacion: any;
+  delete: boolean = false;
+  deleteEducacion: boolean = false;
 
   constructor(private experiencias:AcercaDeServiceService, private modal:ModalService) { }
 
@@ -30,6 +32,14 @@ export class AcercaDeComponent implements OnInit {
   }
   desplegarModificar(){
     this.modal.$educacion.emit(true);
+  }
+  desplegarDelete(){
+    this.delete = !this.delete;
+
+  }
+  desplegarDeleteEducacion(){
+    this.deleteEducacion = !this.deleteEducacion;
+
   }
 
 }
