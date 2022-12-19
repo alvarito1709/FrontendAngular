@@ -1,6 +1,5 @@
 body{
-    background-color: whitesmoke;
-       background-image: url("imagenes/imagenDeFondo2.jpg");
+    background-color: #181a1b;
        background-size: cover;
        background-attachment: fixed;
        z-index: 1;

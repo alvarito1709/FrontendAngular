@@ -1,3 +1,4 @@
+<!-- Modifica el componente banner (Informacion personal) -->
 <div id="modal">
     <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
         <div id="close">
@@ -9,15 +10,17 @@
       <h4>Modificar</h4>
     </div>
       <div *ngIf="modificarToggle == false">
-        <input name="titulo" placeholder="modifica el titulo" formControlName="titulo" class="name" required />
+        <input name="Titulo" placeholder="modifica el titulo" formControlName="Titulo" class="name" [(ngModel)]="Titulo" />
         <div *ngIf= "titulo?.errors && titulo?.touched">
           <p *ngIf="titulo?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
         </div>
     
-        <input name="descripcion" placeholder="modifica la descripcion" formControlName="decripcion" class="name"/>
-        <input name="nombre" placeholder="modifica el nombre" formControlName="nombre" class="name"/>
-        <input name="foto" placeholder="Coloca la imagen de perfil" formControlName="foto" class="name"/>
-        <input name="banner" placeholder="Coloca el link del banner" formControlName="link" class="name"/>
+        <input name="descripcion" placeholder="modifica la descripcion" formControlName="decripcion" [(ngModel)]="Descripcion" class="name"/>
+        <input name="nombre" placeholder="modifica el nombre" formControlName="nombre" [(ngModel)]="Nombre" class="name"/>
+        <input name="foto" placeholder="Coloca la imagen de perfil" formControlName="foto" [(ngModel)]="Foto" class="name"/>
+        <input  name="banner" placeholder="Coloca el banner" formControlName="link" [(ngModel)]="Banner" class="name"/>
         <input name="submit" class="btn" type="submit" value="Enviar" />
     </div>
+    </form>
+</div>
    

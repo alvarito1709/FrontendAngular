@@ -28,6 +28,17 @@ export class ModificarEducacionComponent implements OnInit {
   ngOnInit(): void {
   }
   onEnviar(event:Event){
+    event.preventDefault;
+
+    if (this.form.valid){
+      this.closeModal();
+      alert("Cambio guardado.")
+      
+    }
+    else {
+      this.form.markAllAsTouched();
+    }
+  
 
   }
   closeModal(){

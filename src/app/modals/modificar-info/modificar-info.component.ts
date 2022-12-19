@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Persona } from 'src/app/entidades/persona';
 import { ModalService } from 'src/app/service/modal.service';
+import { PersonaService } from 'src/app/service/persona.service';
 
 
 @Component({
@@ -10,16 +12,22 @@ import { ModalService } from 'src/app/service/modal.service';
 })
 export class ModificarInfoComponent implements OnInit {
   form: FormGroup;
+  Titulo: string = '';
+  Descripcion: string = '';
+  Nombre: string = '';
+  Foto: string = '';
+  Banner: string = '';
+
   modificarToggle: boolean = false;
 
-  constructor(private builder:FormBuilder, private modal:ModalService) {
+  constructor(private builder:FormBuilder, private modal:ModalService, private sPersona:PersonaService ) {
     this.form = this.builder.group(
       {
-        titulo:['',Validators.required],
-        decripcion:['', Validators.required, Validators.maxLength(200)],
-        nombre:['', Validators.required, Validators.minLength(4)],
-        foto:['', Validators.required],
-        banner: ['', Validators.required]
+        Titulo:['',Validators.required],
+        Descripcion:['', Validators.required, Validators.maxLength(255)],
+        Nombre:['', Validators.required, Validators.minLength(4)],
+        Foto:['', Validators.required],
+        Banner: ['', Validators.required]
         
       }
     )
@@ -27,6 +35,17 @@ export class ModificarInfoComponent implements OnInit {
   ngOnInit(): void {
   }
   onEnviar(event:Event){
+    event.preventDefault;
+
+    if (this.form.valid){
+      this.closeModal();
+      this.crearInfo();
+      alert("Datos de persona creado exitosamente.")
+      
+    }
+    else {
+      this.form.markAllAsTouched();
+    };
 
   }
   closeModal(){
@@ -39,8 +58,21 @@ export class ModificarInfoComponent implements OnInit {
     this.modificarToggle = !this.modificarToggle;
     
   }
+// crea una nueva entidad persona
+  crearInfo(): void{
+    const id: number = 4;
+    const perso = new Persona (this.Titulo, this.Descripcion, this.Nombre, this.Foto, this.Banner);
+    this.sPersona.editarPersona(perso, 4).subscribe(data => {alert("persona añadida") 
+    window.location.reload();
+  }, err=>{
+    alert("Hubo una falla en la carga. Intente nuevamente.");
+    window.location.reload();
+  })
+
+  }
+
   get titulo(){
-    return this.form.get("titulo");
+    return this.form.get("Titulo");
   }
   get descripcion(){
     return this.form.get("decripcion");
@@ -56,6 +88,7 @@ export class ModificarInfoComponent implements OnInit {
   }
   tituloInvalid(){
     return this.titulo?.touched && !this.titulo?.valid;
+ 
   }
   descripcionInvalid(){
     return this.descripcion?.touched && !this.descripcion?.valid;

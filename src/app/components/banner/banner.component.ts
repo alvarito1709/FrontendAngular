@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Persona } from 'src/app/entidades/persona';
 import { ModalService } from 'src/app/service/modal.service';
-import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.service'
+import { PersonaService } from 'src/app/service/persona.service';
+
 
 @Component({
   selector: 'app-banner',
@@ -9,15 +11,18 @@ import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.ser
 })
 export class BannerComponent implements OnInit {
 
-  info: any;
+  persona: Persona[] = [];
 
-  constructor(private data: AcercaDeServiceService, private modal: ModalService) { }
+  constructor(private sPersona: PersonaService, private modal: ModalService) { }
 
   ngOnInit(): void {
-    this.data.getDatos().subscribe((datos=>{
-      return this.info = datos.Informacion;
-     }))
+    this.mostrarPersona();
   }
+
+  mostrarPersona(){
+    this.sPersona.list().subscribe(dato => {this.persona = dato});
+  }
+
   modificarInfo(){
     
     this.modal.$info.emit(true);

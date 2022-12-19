@@ -2,7 +2,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@1&display=swap" rel="stylesheet">
 <div class="container">
-    <div class="row" *ngFor="let mostrarInfo of info">
+    <div class="row" *ngFor="let mostrarInfo of persona">
         <div class="col-8 align-self-center order-2">
             <!-- informacion -->
             <div class="saludo" >
@@ -13,7 +13,7 @@
                         <img [src]="mostrarInfo.foto" alt="imagen de perfil" id="imagen_de_perfil">
                     </section>  
                     </div>
-                <h3 id="segundaLinea">{{mostrarInfo.habilidades}} </h3>
+                <h3 id="segundaLinea">{{mostrarInfo.descripcion}} </h3>
                 
             <h3 id="Name">
             {{mostrarInfo.nombre}}

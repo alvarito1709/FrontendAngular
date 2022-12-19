@@ -52,8 +52,8 @@ textarea{
 }
 
 input {
-    width: 276px;
-    height: 48px;
+    width: 45vh;
+    height: 7vh;
     border: 1px solid rgba(255,255,255,.4);
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -175,8 +175,8 @@ input:focus, textarea:focus {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     transition: all .30s;
     display: flex;
     align-items: center;
@@ -193,6 +193,7 @@ input:focus, textarea:focus {
 	visibility: hidden;
 }
 
+/*controla el ccs del switch*/
 label {
 	cursor: pointer;
 	text-indent: -9999px;

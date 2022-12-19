@@ -234,4 +234,9 @@ body input #switch{
 	align-items: left;
 	height: 100vh;
 }
+input[type=file] {
+    cursor:pointer;
+    border-radius: 5%;
+    background-color: #2d3b36;
+}
 
