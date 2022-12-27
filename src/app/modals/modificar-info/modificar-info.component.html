@@ -5,22 +5,31 @@
         
       <button type="button" class="btn-close btn-close-white" aria-label="Close"  (click)="closeModal()"> </button>
     </div>
-    <!-- toggle que modifica el valor (agregar, modificar) -->
-        <div *ngIf="modificarToggle == false">
+
       <h4>Modificar</h4>
-    </div>
-      <div *ngIf="modificarToggle == false">
-        <input name="Titulo" placeholder="modifica el titulo" formControlName="Titulo" class="name" [(ngModel)]="Titulo" />
-        <div *ngIf= "titulo?.errors && titulo?.touched">
-          <p *ngIf="titulo?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
+        <input name="titulo" placeholder="modifica el titulo" formControlName="titulo" class="name" [(ngModel)]="titulo" ngClass="{'is-invalid': Titulo.errors && Titulo.touched, 'is-valid': !Titulo.errors && !Titulo.touched }" />
+        <div *ngIf= "Titulo?.errors && Titulo?.touched">
+          <p> El titulo es requerido</p>
+          
         </div>
     
-        <input name="descripcion" placeholder="modifica la descripcion" formControlName="decripcion" [(ngModel)]="Descripcion" class="name"/>
-        <input name="nombre" placeholder="modifica el nombre" formControlName="nombre" [(ngModel)]="Nombre" class="name"/>
-        <input name="foto" placeholder="Coloca la imagen de perfil" formControlName="foto" [(ngModel)]="Foto" class="name"/>
-        <input  name="banner" placeholder="Coloca el banner" formControlName="link" [(ngModel)]="Banner" class="name"/>
+        <input name="descripcion" placeholder="modifica la descripcion" formControlName="descripcion" [(ngModel)]="descripcion" class="name" ngClass="{'is-invalid': Descripcion.errors && Descripcion.touched, 'is-valid': !Descripcion.errors && !Descripcion.touched }"/>
+        <div *ngIf= "Descripcion?.errors && Descripcion?.touched">
+          <p> La descripcion es requerida</p>
+        </div>
+        <input name="nombre" placeholder="modifica el nombre" formControlName="nombre" [(ngModel)]="nombre" class="name" ngClass="{'is-invalid': Nombre.errors && Nombre.touched, 'is-valid': !Nombre.errors && !Nombre.touched }"/>
+        <div *ngIf= "Nombre?.errors && Nombre?.touched">
+          <p *ngIf="Nombre?.hasError('required')"> El nombre es requerido</p>
+        </div>
+        <input name="foto" placeholder="Coloca la imagen de perfil" formControlName="foto" [(ngModel)]="foto" class="name" ngClass="{'is-invalid': Foto.errors && Foto.touched, 'is-valid': !Foto.errors && !Foto.touched }"/>
+        <div *ngIf= "Foto?.errors && Foto?.touched">
+          <p *ngIf="Foto?.hasError('required')"> La foto de perfil es requerida</p>
+        </div>
+        <input  name="banner" placeholder="Coloca el banner" formControlName="banner" [(ngModel)]="banner" class="name"/>
+        <div *ngIf= "Banner?.errors && Banner?.touched">
+          <p *ngIf="Banner?.hasError('required')"> El banner es requerido</p>
+        </div>
         <input name="submit" class="btn" type="submit" value="Enviar" />
-    </div>
     </form>
 </div>
    

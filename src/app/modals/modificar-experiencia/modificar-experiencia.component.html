@@ -1,58 +1,33 @@
-<div id="modal">
-    <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
-        <div id="close">
-        <input type="checkbox" id="switch" (click)="modificar()" /><label for="switch">Toggle</label>
-      <button type="button" class="btn-close btn-close-white" aria-label="Close"  (click)="closeModal()"> </button>
-    </div>
-    <!-- toggle que modifica el valor (agregar, modificar) -->
-        <div *ngIf="modificarToggle == false">
-      <h4>Modificar</h4>
-    </div>
-    <div *ngIf="modificarToggle == true">
-        <h4>Agregar</h4>
-      </div>
-      <!-- valor modificar -->
-      <div *ngIf="modificarToggle == false">
-        <input name="titulo" placeholder="modifica el titulo" formControlName="titulo" class="name" required />
-        <div *ngIf= "titulo?.errors && titulo?.touched">
-          <p *ngIf="titulo?.hasError('required')"> El Nombre es requerido</p>
-          <p *ngIf="titulo?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
-        </div>
-    
-        <input name="descripcion" placeholder="modifica la descripcion" formControlName="decripcion" class="name"/>
-        <div *ngIf= "descripcion?.errors && descripcion?.touched">
-          <p *ngIf="descripcion?.hasError('required')"> El mail es requerido</p>
-          <p *ngIf="descripcion?.hasError('maxLength')"> El mail debe tener un formato valido</p>
-        </div>
-        <input name="fecha" placeholder="modifica el periodo" formControlName="periodo" class="name"/>
-        <input name="foto" placeholder="imagen de la empresa (link)" formControlName="foto" class="name"/>
-        <div *ngIf= "foto?.errors && foto?.touched">
-          <p *ngIf="foto?.hasError('required')"> La foto es requerida</p>
-        </div>
-        <input name="link" placeholder="Coloca el link de la empresa" formControlName="link" class="name"/>
-        <input name="submit" class="btn" type="submit" value="Enviar" />
-    </div>
 
-    <!-- valor agregar -->
-    <div *ngIf="modificarToggle == true">
-        <input name="titulo" placeholder="Titulo" formControlName="titulo" class="name" required />
-        <div *ngIf= "titulo?.errors && titulo?.touched">
-          <p *ngIf="titulo?.hasError('required')"> El Nombre es requerido</p>
-          <p *ngIf="titulo?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
-        </div>
-    
-        <input name="descripcion" placeholder="Descripcion" formControlName="decripcion" class="name"/>
-        <div *ngIf= "descripcion?.errors && descripcion?.touched">
-          <p *ngIf="descripcion?.hasError('required')"> El mail es requerido</p>
-          <p *ngIf="descripcion?.hasError('maxLength')"> El mail debe tener un formato valido</p>
-        </div>
-        <input name="fecha" placeholder="Periodo de experiencia" formControlName="periodo" class="name"/>
-        <input name="foto" placeholder="Imagen de la empresa (link)" formControlName="foto" class="name"/>
-        <div *ngIf= "foto?.errors && foto?.touched">
-          <p *ngIf="foto?.hasError('required')"> La foto es requerida</p>
-        </div>
-        <input name="link" placeholder="Agrega el link de la empresa" formControlName="link" class="name"/>
-        <input name="submit" class="btn" type="submit" value="Enviar" />
-    </div>
-      </form>
-    </div>
+<div id="modal" class="container-fluid" *ngIf="experiencia">
+      <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+          <div id="close">
+        <button type="button" class="btn-close btn-close-white" aria-label="Close"  routerLink=""> </button>
+      </div>
+
+        <h4>Modificar</h4>
+
+        <div>
+          <input name="titulo" placeholder="Modifica el titulo" formControlName="titulo" [(ngModel)]="experiencia.titulo" class="name" required />
+          <div *ngIf= "Titulo?.errors && Titulo?.touched">
+            <p *ngIf="Titulo?.hasError('required')"> El titulo es requerido</p>
+            <p *ngIf="Titulo?.hasError('minLength')"> El titulo debe tener al menos 4 caracteres</p>
+          </div>
+      
+          <input name="descripcion" placeholder="modifica la descripcion" formControlName="decripcion" [(ngModel)]="experiencia.descripcion" class="name"/>
+          <div *ngIf= "Descripcion?.errors && Descripcion?.touched">
+            <p *ngIf="Descripcion?.hasError('required')"> La descripcion es requerida.</p>
+            <p *ngIf="Descripcion?.hasError('maxLength')"> No debe sobrepasar los 200 caracteres. </p>
+          </div>
+          <input name="fecha" type="date" placeholder="modifica el periodo" formControlName="periodoComienzo" [(ngModel)]="experiencia.periodoComienzo" class="name"/>
+          <input name="fecha" type="date" placeholder="modifica el periodo" formControlName="periodoFinal" [(ngModel)]="experiencia.periodoFinal" class="name"/>
+          <input name="foto" placeholder="imagen de la empresa (link)" formControlName="foto" [(ngModel)]="experiencia.imagen" class="name"/>
+          <div *ngIf= "Foto?.errors && Foto?.touched">
+            <p *ngIf="Foto?.hasError('required')"> La foto es requerida</p>
+          </div>
+          <input name="link" placeholder="Coloca el link de la empresa" formControlName="link" [(ngModel)]="experiencia.link" class="name"/>
+          <input name="submit" class="btn" type="submit" value="Enviar" />
+          </div>
+        </form>
+      </div>
+

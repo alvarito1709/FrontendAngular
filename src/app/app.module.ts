@@ -23,6 +23,8 @@ import { ModificarHardSkillsComponent } from './modals/modificar-hard-skills/mod
 import { ModificarInfoComponent } from './modals/modificar-info/modificar-info.component';
 import { ModificarSoftSkillsComponent } from './modals/modificar-soft-skills/modificar-soft-skills.component';
 import { ModificarProyectosComponent } from './modals/modificar-proyectos/modificar-proyectos.component';
+import { AgregarExperienciaComponent } from './modals/agregar-experiencia/agregar-experiencia.component';
+import { AgregarEducacionComponent } from './modals/agregar-educacion/agregar-educacion.component';
 
 
 
@@ -47,7 +49,9 @@ import { ModificarProyectosComponent } from './modals/modificar-proyectos/modifi
     ModificarHardSkillsComponent,
     ModificarInfoComponent,
     ModificarSoftSkillsComponent,
-    ModificarProyectosComponent
+    ModificarProyectosComponent,
+    AgregarExperienciaComponent,
+    AgregarEducacionComponent
     
   ],
   imports: [

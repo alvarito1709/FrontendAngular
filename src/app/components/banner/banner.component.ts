@@ -11,9 +11,10 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 export class BannerComponent implements OnInit {
 
-  persona: Persona[] = [];
+  persona: Persona[] =[];
+ 
 
-  constructor(private sPersona: PersonaService, private modal: ModalService) { }
+  constructor(private sPersona: PersonaService, private modal: ModalService) {}
 
   ngOnInit(): void {
     this.mostrarPersona();
@@ -28,5 +29,6 @@ export class BannerComponent implements OnInit {
     this.modal.$info.emit(true);
 
   }
+ 
 
 }

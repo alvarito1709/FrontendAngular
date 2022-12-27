@@ -12,22 +12,23 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 export class ModificarInfoComponent implements OnInit {
   form: FormGroup;
-  Titulo: string = '';
-  Descripcion: string = '';
-  Nombre: string = '';
-  Foto: string = '';
-  Banner: string = '';
+  titulo: string = '';
+  descripcion: string = '';
+  nombre: string = '';
+  foto: string = '';
+  banner: string = '';
+ 
 
   modificarToggle: boolean = false;
 
   constructor(private builder:FormBuilder, private modal:ModalService, private sPersona:PersonaService ) {
     this.form = this.builder.group(
       {
-        Titulo:['',Validators.required],
-        Descripcion:['', Validators.required, Validators.maxLength(255)],
-        Nombre:['', Validators.required, Validators.minLength(4)],
-        Foto:['', Validators.required],
-        Banner: ['', Validators.required]
+        titulo:['',[Validators.required]],
+        descripcion:['', [Validators.required, Validators.maxLength(255)]],
+        nombre:['',[ Validators.required]],
+        foto:['',[ Validators.required]],
+        banner: ['', [Validators.required]]
         
       }
     )
@@ -37,16 +38,19 @@ export class ModificarInfoComponent implements OnInit {
   onEnviar(event:Event){
     event.preventDefault;
 
-    if (this.form.valid){
-      this.closeModal();
-      this.crearInfo();
-      alert("Datos de persona creado exitosamente.")
+    if(this.form.valid){
       
+      this.crearInfo();
+      alert("Datos de persona creado exitosamente.");
+      this.closeModal();
     }
-    else {
+    else{
       this.form.markAllAsTouched();
-    };
-
+      alert ("El dato no fue creado correctamente. Por favor intente nuevamente.")
+    }
+      
+    
+  
   }
   closeModal(){
     this.modal.$info.emit(false);
@@ -60,41 +64,43 @@ export class ModificarInfoComponent implements OnInit {
   }
 // crea una nueva entidad persona
   crearInfo(): void{
-    const id: number = 4;
-    const perso = new Persona (this.Titulo, this.Descripcion, this.Nombre, this.Foto, this.Banner);
-    this.sPersona.editarPersona(perso, 4).subscribe(data => {alert("persona añadida") 
-    window.location.reload();
-  }, err=>{
-    alert("Hubo una falla en la carga. Intente nuevamente.");
+    
+    const id: number = 1;
+
+    this.sPersona.borrarPersona(id).subscribe(data => alert("se ha borrado la persona anterior."));
+
+    const perso = new Persona(this.titulo, this.descripcion, this.nombre, this.foto, this.banner);
+    this.sPersona.editarPersona(perso, id).subscribe(data => {alert("persona añadida") 
     window.location.reload();
   })
 
   }
+ 
 
-  get titulo(){
-    return this.form.get("Titulo");
+  get Titulo(){
+    return this.form.get("titulo");
   }
-  get descripcion(){
-    return this.form.get("decripcion");
+  get Descripcion(){
+    return this.form.get("descripcion");
   }
-  get nombre(){
+  get Nombre(){
     return this.form.get("nombre");
   }
-  get foto(){
+  get Foto(){
     return this.form.get("foto");
   }
-  get banner(){
+  get Banner(){
     return this.form.get("banner");
   }
   tituloInvalid(){
-    return this.titulo?.touched && !this.titulo?.valid;
+    return this.Titulo?.touched && !this.Titulo?.valid;
  
   }
   descripcionInvalid(){
-    return this.descripcion?.touched && !this.descripcion?.valid;
+    return this.Descripcion?.touched && !this.Descripcion?.valid;
   }
   fotoInvalid(){
-    return this.foto?.touched && !this.foto?.valid;
+    return this.Foto?.touched && !this.Foto?.valid;
   }
 
 }

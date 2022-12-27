@@ -13,7 +13,9 @@ const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'contacto', component: ContactoComponent },
   {path: 'about', component: AcercaDeComponent },
-  {path: 'modal', component: ModificarEducacionComponent},
+  {path: 'experienciaModal', component: ModificarExperienciaComponent},
+  {path: 'experienciaModal/:id', component: ModificarExperienciaComponent},
+  {path: 'educacionModal/:id', component: ModificarEducacionComponent},
   { path: '**', component: Error404Component}
 ];
 

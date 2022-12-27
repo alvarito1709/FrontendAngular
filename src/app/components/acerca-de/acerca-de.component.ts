@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.service';
 import { ModalService } from 'src/app/service/modal.service';
+import { Experiencia } from 'src/app/entidades/experiencia';
+import { ExperienciaService } from 'src/app/service/experiencia.service';
+import { Educacion } from 'src/app/entidades/educacion';
+import { EducacionService } from 'src/app/service/educacion.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -9,26 +12,25 @@ import { ModalService } from 'src/app/service/modal.service';
 })
 export class AcercaDeComponent implements OnInit {
 
-  experiencia: any;
-  educacion: any;
+  educacion: any = [];
   delete: boolean = false;
   deleteEducacion: boolean = false;
+  editarExperiencia: boolean = false;
+  editarEducacion: boolean = false;
+  experiencias: Experiencia []=[];
 
-  constructor(private experiencias:AcercaDeServiceService, private modal:ModalService) { }
+  constructor( private modal:ModalService, public sExperiencia:ExperienciaService, public sEducacion: EducacionService) { }
 
   ngOnInit(): void {
-    this.experiencias.getDatos().subscribe((dato: { Experiencia: any; }) => {
-      this.experiencia = dato.Experiencia;
-      this.experiencias.getDatos().subscribe((dato =>{
-        this.educacion = dato.Educacion;
-      }))
-    })
+    this.llamarExperiencia();
+    this.llamarEducacion();
     
   }
 
   desplegarModal(){
     //despliega el modal de modificacion o agregacion 
     this.modal.$experiencia.emit(true);
+    this.modal.$idExperiencia.emit(this.experiencias)
   }
   desplegarModificar(){
     this.modal.$educacion.emit(true);
@@ -41,5 +43,43 @@ export class AcercaDeComponent implements OnInit {
     this.deleteEducacion = !this.deleteEducacion;
 
   }
+  desplegarEditarExperiencia(){
+    this.editarExperiencia = !this.editarExperiencia;
+  }
+  desplegarEditarEducacion(){
+    this.editarEducacion = !this.editarEducacion;
+  }
+  desplegarAgregarExperiencia(){
+    this.modal.$agregarExperiencia.emit(true);
+  }
+  desplegarAgregarEducacion(){
+    this.modal.$agregarEducacion.emit(true);
+  }
+
+  //Metodos para el backend experiencia
+  llamarExperiencia(): void{
+    this.sExperiencia.list().subscribe(data => {this.experiencias = data});
+  }
+
+  borrarExperiencia(id: number) {
+
+      this.sExperiencia.borrarExperiencia(id).subscribe();
+      window.location.reload();
+      return alert("experiencia eliminada con exito.");
+      
+  }
+
+  //Metodos para backend Educacion
+
+  llamarEducacion(): void{
+    this.sEducacion.list().subscribe(data => {this.educacion = data});
+  }
+  borrarEducacion(id: number){
+    this.sEducacion.borrarEducacion(id).subscribe();
+    window.location.reload();
+    return alert ("educacion eliminada con exito");
+  }
+
+
 
 }

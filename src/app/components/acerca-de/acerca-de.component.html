@@ -3,24 +3,32 @@
 <hr>
 <h3 id="subtituloExperiencia">Experiencia</h3>
   <section class="container" >
-    <div id="iconos"><span class="material-icons" (click)="desplegarModal()">
+    <div id="iconos"><span class="material-icons" (click)="desplegarEditarExperiencia()">
         create
         </span>
         <span class="material-icons" (click)="desplegarDelete()">
             delete_forever
-            </span></div> 
+            </span>
+            <span class="material-icons" (click)="desplegarAgregarExperiencia()">
+              add_circle_outline
+              </span>
+          </div> 
     <div class="row " id="carta">
-      <div class="col-md-6 col-sm-6 col-lg-3" *ngFor="let data of experiencia">
-        <div *ngIf="delete == true"> <button type="button" class="btn-close btn-close-white" aria-label="Close" id="closeExperiencia"></button></div>
+      <div class="col-md-6 col-sm-6 col-lg-3" *ngFor="let data of experiencias">
+        <div id="iconos" *ngIf="editarExperiencia == true"><span class="material-icons" [routerLink]="['/experienciaModal', data.id]">
+          create
+          </span>
+        </div>
+        <div *ngIf="delete == true"> <button type="button" class="btn-close btn-close-white" aria-label="Close" id="closeExperiencia" (click)="borrarExperiencia(data.id)" ></button></div>
        <div class="card text-white bg-dark mb-3" id="cardID" style="width: 15rem; ">
          <img [src]="data.imagen" class="card-img-top" alt="Logo Argentina Programa" >
            <div class="card-body">
              <h5 class="card-title">{{data.titulo}}</h5>
              <p class="card-text"> {{data.descripcion}}
              <br> 
-             {{data.periodo}}
+             {{data.periodoComienzo}} - {{data.periodoFinal}}
              </p>
-             <a href="{{data.link}}" target="_blank" class="btn btn-secondary">{{data.titulo}}</a>
+             <a href= "{{data.link}}" target="_blank" class="btn btn-secondary">{{data.titulo}}</a>
            </div>
     </div>
   </div>
@@ -35,23 +43,31 @@
 <!-- Seccion Educación -->
 <h3 id="subtituloExperiencia">Educación</h3>
 <section class="container">
-  <div id="iconos"><span class="material-icons" (click)="desplegarModificar()">
+  <div id="iconos"><span class="material-icons" (click)="desplegarEditarEducacion()">
     create
     </span>
     <span class="material-icons" (click)="desplegarDeleteEducacion()">
         delete_forever
-        </span></div> 
+        </span>
+        <span class="material-icons" (click)="desplegarAgregarEducacion()">
+          add_circle_outline
+          </span>
+      </div> 
   <div class="row" >
     <div class="col-md-6 col-sm-6 col-lg-4" *ngFor="let educacionActual of educacion">
-      <div *ngIf="deleteEducacion == true"> <button type="button" class="btn-close btn-close-white" aria-label="Close" id="close"></button></div>
+      <div id="iconos" *ngIf="editarEducacion == true"><span class="material-icons" [routerLink]="['/educacionModal', educacionActual.id]">
+        create
+        </span>
+      </div>
+      <div *ngIf="deleteEducacion == true"> <button type="button" class="btn-close btn-close-white" aria-label="Close" id="close" (click)="borrarEducacion(educacionActual.id)"></button></div>
      <div class="card text-white bg-dark mb-3" id="cardID" style="width: 18rem;">
        <img [src]="educacionActual.imagen" class="card-img-top" alt="Logo Argentina Programa">
          <div class="card-body">
-           <h5 class="card-title">{{educacionActual.titulo}}</h5>
+           <h5 class="card-title">{{educacionActual.tituloObtenido}}</h5>
            <p class="card-text">{{educacionActual.descripcion}}
-           <br> {{educacionActual.periodo}}
+           <br> {{educacionActual.periodoComienzo}} - {{educacionActual.periodoFinal}}
            </p>
-           <a href={{educacionActual.link}} target="_blank" class="btn btn-secondary">{{educacionActual.titulo}}</a>
+           <a href={{educacionActual.link}} target="_blank" class="btn btn-secondary">{{educacionActual.tituloObtenido}}</a>
            </div>
    </div>
   </div>

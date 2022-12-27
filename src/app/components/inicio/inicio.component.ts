@@ -15,6 +15,8 @@ export class InicioComponent implements OnInit {
   modificarSkills: boolean = false;
   modificarSoft: boolean = false;
   modificarProyecto: boolean = false;
+  agregarExperiencia: boolean = false;
+  agregarEducacion: boolean = false;
 
   constructor(private modal: ModalService) { }
 
@@ -27,6 +29,8 @@ export class InicioComponent implements OnInit {
     this.modal.$skills.subscribe((valor => this.modificarSkills = valor));
     this.modal.$soft.subscribe((valor => this.modificarSoft = valor));
     this.modal.$proyecto.subscribe((valor => this.modificarProyecto = valor));
+    this.modal.$agregarExperiencia.subscribe((valor => this.agregarExperiencia = valor));
+    this.modal.$agregarEducacion.subscribe((valor => this.agregarEducacion = valor));
    
   }
 
