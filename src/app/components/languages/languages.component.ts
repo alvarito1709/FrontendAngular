@@ -11,6 +11,7 @@ export class LanguagesComponent implements OnInit {
   habilidad: any;
   porcentajeCompleto: any;
   delete: boolean = false;
+  editarSkill: boolean = false;
 
   constructor(private http:AcercaDeServiceService, private modal: ModalService) { }
 
@@ -23,12 +24,16 @@ export class LanguagesComponent implements OnInit {
     return this.porcentajeCompleto = this.habilidad.porcentaje;
   }
   modificarSkills(){
-    this.modal.$soft.emit(true);
+    this.editarSkill = !this.editarSkill;
   }
   deleteSkill(){
 
     this.delete = !this.delete;
 
   }
+  agregarSkill(){
+    this.modal.$soft.emit(true);
+  }
+
 
 }

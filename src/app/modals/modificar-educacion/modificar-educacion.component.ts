@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Educacion } from 'src/app/entidades/educacion';
+import { EducacionService } from 'src/app/service/educacion.service';
 import { ModalService } from 'src/app/service/modal.service';
 
 
@@ -11,14 +14,24 @@ import { ModalService } from 'src/app/service/modal.service';
 export class ModificarEducacionComponent implements OnInit {
   form: FormGroup;
   modificarToggle: boolean = false;
+  educacion: Educacion = null;
+  tituloObtenido: string = '';
+  descripcion: string = '';
+  periodoComienzo = '';
+  periodoFinal = '';
+  imagen: string = '';
+  link: string = '';
 
-  constructor(private builder:FormBuilder, private modal:ModalService) {
+
+  constructor(private builder:FormBuilder, private modal:ModalService, private route:ActivatedRoute,
+     private router:Router, private sEducacion:EducacionService) {
     this.form = this.builder.group(
       {
-        titulo:['',Validators.required],
-        decripcion:['', Validators.required, Validators.maxLength(200)],
-        periodo:[''],
-        foto:['', Validators.required],
+        tituloObtenido:['',[Validators.required]],
+        decripcion:['', [Validators.required, Validators.maxLength(200)]],
+        periodoComienzo:[''],
+        periodoFinal:[''],
+        imagen:['', [Validators.required]],
         link: ['',]
 
         
@@ -26,13 +39,18 @@ export class ModificarEducacionComponent implements OnInit {
     )
    }
   ngOnInit(): void {
+    const id = this.route.snapshot.params['id'];
+    this.sEducacion.verEducacion(id).subscribe(data =>{
+      this.educacion = data;
+    })
   }
   onEnviar(event:Event){
     event.preventDefault;
 
     if (this.form.valid){
-      this.closeModal();
-      alert("Cambio guardado.")
+      this.editarEducacion();
+      this.router.navigate(['']);
+      alert("Dato modificado con exito");
       
     }
     else {
@@ -41,38 +59,42 @@ export class ModificarEducacionComponent implements OnInit {
   
 
   }
-  closeModal(){
-    this.modal.$educacion.emit(false);
-
-  }
   
-  modificar(){
-//cambia el estado de modificar a agregar
-    this.modificarToggle = !this.modificarToggle;
-    
-  }
-  get titulo(){
-    return this.form.get("titulo");
-  }
-  get descripcion(){
+
+  get Descripcion(){
     return this.form.get("decripcion");
   }
-  get periodo(){
-    return this.form.get("periodo");
+  get TituloObtenido(){
+    return this.form.get("tituloObtenido");
   }
-  get foto(){
-    return this.form.get("foto");
+  get PeriodoComienzo(){
+    return this.form.get("periodoComienzo");
   }
-  get link(){
+  get PeriodoFinal(){
+    return this.form.get("periodoFinal");
+  }
+  get Imagen(){
+    return this.form.get("imagen");
+  }
+  get Link(){
     return this.form.get("link");
   }
-  tituloInvalid(){
-    return this.titulo?.touched && !this.titulo?.valid;
-  }
+ 
   descripcionInvalid(){
-    return this.descripcion?.touched && !this.descripcion?.valid;
+    return this.Descripcion?.touched && !this.Descripcion?.valid;
+  }
+  tituloInvalid(){
+    return this.TituloObtenido?.touched && !this.TituloObtenido?.valid;
   }
   fotoInvalid(){
-    return this.foto?.touched && !this.foto?.valid;
+    return this.Imagen?.touched && !this.Imagen?.valid;
+  }
+
+
+  editarEducacion(): void{
+    const id = this.route.snapshot.params['id'];
+    this.sEducacion.editarEducacion(this.educacion, id).subscribe(data => {
+      this.router.navigate(['']);
+    })
   }
 }

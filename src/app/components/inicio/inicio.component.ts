@@ -12,7 +12,7 @@ export class InicioComponent implements OnInit {
   modificarExperiencia: boolean = false;
   modificarEducacion: boolean = false;
   modificarInfo: boolean = false;
-  modificarSkills: boolean = false;
+  agregarSkills: boolean = false;
   modificarSoft: boolean = false;
   modificarProyecto: boolean = false;
   agregarExperiencia: boolean = false;
@@ -26,7 +26,7 @@ export class InicioComponent implements OnInit {
     this.modal.$experiencia.subscribe((valor => this.modificarExperiencia = valor));
     this.modal.$educacion.subscribe((valor => this.modificarEducacion = valor));
     this.modal.$info.subscribe((valor => this.modificarInfo = valor));
-    this.modal.$skills.subscribe((valor => this.modificarSkills = valor));
+    this.modal.$skills.subscribe((valor => this.agregarSkills = valor));
     this.modal.$soft.subscribe((valor => this.modificarSoft = valor));
     this.modal.$proyecto.subscribe((valor => this.modificarProyecto = valor));
     this.modal.$agregarExperiencia.subscribe((valor => this.agregarExperiencia = valor));

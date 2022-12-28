@@ -7,6 +7,8 @@ import { Error404Component } from './components/error404/error404.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ModificarEducacionComponent } from './modals/modificar-educacion/modificar-educacion.component';
 import { ModificarExperienciaComponent } from './modals/modificar-experiencia/modificar-experiencia.component';
+import { ModificarHardSkillsComponent } from './modals/modificar-hard-skills/modificar-hard-skills.component';
+import { ModificarSoftSkillsComponent } from './modals/modificar-soft-skills/modificar-soft-skills.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,8 @@ const routes: Routes = [
   {path: 'experienciaModal', component: ModificarExperienciaComponent},
   {path: 'experienciaModal/:id', component: ModificarExperienciaComponent},
   {path: 'educacionModal/:id', component: ModificarEducacionComponent},
+  {path: 'skillModal/:id', component: ModificarHardSkillsComponent},
+  {path: 'softSkillModal/:id', component: ModificarSoftSkillsComponent},
   { path: '**', component: Error404Component}
 ];
 

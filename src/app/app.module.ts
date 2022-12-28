@@ -25,6 +25,8 @@ import { ModificarSoftSkillsComponent } from './modals/modificar-soft-skills/mod
 import { ModificarProyectosComponent } from './modals/modificar-proyectos/modificar-proyectos.component';
 import { AgregarExperienciaComponent } from './modals/agregar-experiencia/agregar-experiencia.component';
 import { AgregarEducacionComponent } from './modals/agregar-educacion/agregar-educacion.component';
+import { AgregarHardSkillComponent } from './modals/agregar-hard-skill/agregar-hard-skill.component';
+import { AgregarSoftSkillComponent } from './modals/agregar-soft-skill/agregar-soft-skill.component';
 
 
 
@@ -51,7 +53,9 @@ import { AgregarEducacionComponent } from './modals/agregar-educacion/agregar-ed
     ModificarSoftSkillsComponent,
     ModificarProyectosComponent,
     AgregarExperienciaComponent,
-    AgregarEducacionComponent
+    AgregarEducacionComponent,
+    AgregarHardSkillComponent,
+    AgregarSoftSkillComponent
     
   ],
   imports: [

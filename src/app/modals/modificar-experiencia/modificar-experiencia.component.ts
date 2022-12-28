@@ -12,8 +12,6 @@ import { ModalService } from 'src/app/service/modal.service';
 })
 export class ModificarExperienciaComponent implements OnInit {
   form: FormGroup;
-  id: number = 0;
-  modificarToggle: boolean = false;
   experiencia: Experiencia  = null;
   titulo: string = '';
   descripcion: string = '';
@@ -64,11 +62,7 @@ export class ModificarExperienciaComponent implements OnInit {
 
   }
   
-  modificar(){
-//cambia el estado de modificar a agregar
-    this.modificarToggle = !this.modificarToggle;
-    
-  }
+ 
   get Titulo(){
     return this.form.get("titulo");
   }
@@ -100,24 +94,7 @@ export class ModificarExperienciaComponent implements OnInit {
   //Metodos para el backend
 
  
-  cargarExperiencia(): void{
-   this.route.params.subscribe(
-    enlace =>{ let id = enlace ['id'];
-    if(id){
-        this.sExperiencia.verExperiencia(id).subscribe(data => this.experiencia = data)
-    }
-  }
-   )
-  }
-
-  cargarId(): number{
-    let idExperiencia: any ;
-    const urlParams = new URLSearchParams;
-    idExperiencia = urlParams.get('id');
-    console.log(idExperiencia);
-    return parseFloat(idExperiencia);
-    
-   }
+ 
 
    editarExperiencia(): void{
     const id = this.route.snapshot.params['id'];

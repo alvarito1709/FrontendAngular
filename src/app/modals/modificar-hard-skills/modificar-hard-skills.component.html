@@ -1,39 +1,31 @@
 <div id="modal">
     <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
         <div id="close">
-        <input type="checkbox" id="switch" (click)="modificar()" /><label for="switch">Toggle</label>
-      <button type="button" class="btn-close btn-close-white" aria-label="Close"  (click)="closeModal()"> </button>
+      <button type="button" class="btn-close btn-close-white" aria-label="Close"  routerLink=""> </button>
     </div>
-        <div *ngIf="modificarToggle == false">
+        
       <h4>Modificar</h4>
-    </div>
-    <div *ngIf="modificarToggle == true">
-        <h4>Agregar</h4>
-      </div>
-      <div *ngIf="modificarToggle == false">
-        <input name="titulo" placeholder="modifica el titulo" formControlName="titulo" class="name" required />
-        <!-- <div *ngIf= "Nombre?.errors && Nombre?.touched">
+        <input name="Nombre" placeholder="modifica el titulo" formControlName="nombre" [(ngModel)]="skill.nombre" class="name" required />
+        <div *ngIf= "Nombre?.errors && Nombre?.touched">
           <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido</p>
-          <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
-        </div> -->
+          <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 3 caracteres</p>
+        </div>
     
-        <input name="porcentaje" placeholder="modifica el porcentaje" formControlName="porcentaje" class="name"/>
-        <input name="imagen" placeholder="imagen del skill (link)" formControlName="foto" class="name"/>
-        <input name="color" placeholder="coloca el color (azul, amarillo, rojo, verde)" formControlName="color" class="name"/>
+        <input name="Progreso" placeholder="modifica el porcentaje" formControlName="progreso" [(ngModel)]="skill.progreso" class="name"/>
+        <p *ngIf="Progreso?.hasError('required')"> Campo requerido</p>
+        <input name="Logo" placeholder="imagen del skill (link)" formControlName="logo" [(ngModel)]="skill.logo" class="name"/>
+        <p *ngIf="Logo.hasError('required')"> Campo requerido</p>
+        <label for="color">Selecciona el color.</label>
+        <br>
+        <select name="Color" placeholder="Agrega el color" formControlName="color" [(ngModel)]="skill.color" class="name" id="color">
+          <option value="bg-success" selected>verde</option>
+          <option value="bg-info">azul</option>
+          <option value="bg-warning">amarillo</option>
+          <option value="bg-danger">rojo</option>
+          <option value="bg-secondary">gris</option>
+          <option value="bg-dark">negro</option>
+        </select>
+        <p *ngIf="Color?.hasError('required')"> Campo requerido</p>
         <input name="submit" class="btn" type="submit" value="Enviar" />
-    </div>
-    <div *ngIf="modificarToggle == true">
-        <input name="titulo" placeholder="Agrega el titulo" formControlName="titulo" class="name" required />
-        <!-- <div *ngIf= "Nombre?.errors && Nombre?.touched">
-          <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido</p>
-          <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
-        </div> -->
-    
-        <input name="porcentaje" placeholder="Agrega el porcentaje" formControlName="porcentaje" class="name"/>
-        <input name="imagen" placeholder="Imagen del skill (link)" formControlName="foto" class="name"/>
-        <input name="color" placeholder="Agrega el color (azul, amarillo, rojo, verde)" formControlName="color" class="name"/>
-        <input name="submit" class="btn" type="submit" value="Enviar" />
-    </div>
-      </form>
-    </div>
+   
 

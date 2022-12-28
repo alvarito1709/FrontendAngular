@@ -53,3 +53,14 @@ cursor: pointer;
     float: right;
     margin-right: 18%;
 }
+
+#iconoEditar {
+
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 18%;
+    padding-top: 5%;
+    z-index: 1;
+    cursor: pointer;
+    
+    }
