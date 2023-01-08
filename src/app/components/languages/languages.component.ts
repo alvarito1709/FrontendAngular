@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/service/modal.service';
+import { SoftSkillService } from 'src/app/service/soft-skill.service';
 import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.service';
 
 @Component({
@@ -13,12 +14,10 @@ export class LanguagesComponent implements OnInit {
   delete: boolean = false;
   editarSkill: boolean = false;
 
-  constructor(private http:AcercaDeServiceService, private modal: ModalService) { }
+  constructor(private Sskill: SoftSkillService, private modal: ModalService) { }
 
   ngOnInit(): void {
-    this.http.getDatos().subscribe((dato =>{
-      this.habilidad = dato.Languages;
-    }))
+   this.llamarSkill();
   }
   takePercentage(){
     return this.porcentajeCompleto = this.habilidad.porcentaje;
@@ -35,5 +34,19 @@ export class LanguagesComponent implements OnInit {
     this.modal.$soft.emit(true);
   }
 
+  llamarSkill(){
+    this.Sskill.list().subscribe(data =>{this.habilidad = data})
+  }
+  
+  //metodos para el backend
+
+  eliminarSkill(id:number){
+  
+      this.Sskill.borrarSkill(id).subscribe();
+      alert("Dato eliminado con exito.");
+      window.location.reload();
+     
+    
+  }
 
 }

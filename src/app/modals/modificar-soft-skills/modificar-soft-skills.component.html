@@ -1,36 +1,19 @@
 <div id="modal">
     <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
         <div id="close">
-        <input type="checkbox" id="switch" (click)="modificar()" /><label for="switch">Toggle</label>
-      <button type="button" class="btn-close btn-close-white" aria-label="Close"  (click)="closeModal()"> </button>
+      <button type="button" class="btn-close btn-close-white" aria-label="Close"  routerLink="/"> </button>
     </div>
-        <div *ngIf="modificarToggle == false">
+ 
       <h4>Modificar</h4>
-    </div>
-    <div *ngIf="modificarToggle == true">
-        <h4>Agregar</h4>
-      </div>
-      <div *ngIf="modificarToggle == false">
-        <input name="titulo" placeholder="modifica el titulo" formControlName="titulo" class="name" required />
-        <!-- <div *ngIf= "Nombre?.errors && Nombre?.touched">
-          <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido</p>
-          <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
-        </div> -->
+
+        <input name="nombre" placeholder="modifica el nombre" formControlName="nombre" class="name" [(ngModel)]="skill.nombre" required />
+          <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido.</p>
     
        
-        <input name="porcentaje" placeholder="Modifica el porcentaje" formControlName="porcentaje" class="name"/>
-        <input name="id" placeholder="Coloca el id del skill" formControlName="id" class="name"/>
+        <input name="porcentaje" placeholder="Modifica el porcentaje" formControlName="porcentaje" class="name" [(ngModel)]="skill.progreso" />
+        <p *ngIf="Porcentaje?.hasError('required')"> El porcentaje es requerido.</p>
         <input name="submit" class="btn" type="submit" value="Enviar" />
-    </div>
-    <div *ngIf="modificarToggle == true">
-        <input name="titulo" placeholder="Titulo" formControlName="titulo" class="name" required />
-        <!-- <div *ngIf= "Nombre?.errors && Nombre?.touched">
-          <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido</p>
-          <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
-        </div> -->
-        <input name="porcentaje" placeholder="Coloca el porcentaje" formControlName="porcentaje" class="name"/>
-        <input name="submit" class="btn" type="submit" value="Enviar" />
-    </div>
+    
       </form>
     </div>
 

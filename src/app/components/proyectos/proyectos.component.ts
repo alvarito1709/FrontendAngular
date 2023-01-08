@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/service/modal.service';
+import { ProyectoService } from 'src/app/service/proyecto.service';
 import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.service';
 
 @Component({
@@ -10,19 +11,30 @@ import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.ser
 export class ProyectosComponent implements OnInit {
   proyecto: any;
   delete: boolean = false;
+  modificarToggle: boolean = false;
 
-  constructor(private http:AcercaDeServiceService, private modal:ModalService) { }
+  constructor(private sProyecto:ProyectoService, private modal:ModalService) { }
 
   ngOnInit(): void {
-    this.http.getDatos().subscribe((dato => {
-      this.proyecto = dato.proyectos;
-    }))
+    this.sProyecto.list().subscribe(data=>(
+      this.proyecto = data
+    ));
   }
-  modificarProyectos(){
+  modificar(){
+    this.modificarToggle = !this.modificarToggle;
+  }
+  agregarProyecto(){
     this.modal.$proyecto.emit(true);
   }
   deleteProyecto(){
     this.delete = !this.delete;
+  }
+
+  //metodos para el backend
+  eliminarProyecto(id: number){
+    alert('Dato borrado exitosamente.');
+    window.location.reload();
+    this.sProyecto.borrarProyecto(id).subscribe();
   }
 
 }

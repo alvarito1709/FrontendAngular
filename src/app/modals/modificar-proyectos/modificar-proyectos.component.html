@@ -1,45 +1,21 @@
 <div id="modal">
     <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
         <div id="close">
-        <input type="checkbox" id="switch" (click)="modificar()" /><label for="switch">Toggle</label>
-      <button type="button" class="btn-close btn-close-white" aria-label="Close"  (click)="closeModal()"> </button>
+      <button type="button" class="btn-close btn-close-white" aria-label="Close"  routerLink="/"> </button>
     </div>
-        <div *ngIf="modificarToggle == false">
+
       <h4>Modificar</h4>
-    </div>
-    <div *ngIf="modificarToggle == true">
-        <h4>Agregar</h4>
-      </div>
-      <div *ngIf="modificarToggle == false">
-        <input name="Nombre" placeholder="modifica el nombre" formControlName="nombre" class="name" required />
-        <!-- <div *ngIf= "Nombre?.errors && Nombre?.touched">
-          <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido</p>
-          <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
-        </div> -->
+
+        <input name="Nombre" placeholder="modifica el nombre" formControlName="nombre" class="name" [(ngModel)]="proyecto.nombre"/>
+          <p *ngIf="Nombre?.hasError('required') && Nombre.touched"> El Nombre es requerido</p>
+
     
-        <input name="descripcion" placeholder="modifica la descripcion" formControlName="decripcion" class="name"/>
-        <!-- <div *ngIf= "Mail?.errors && Mail?.touched">
-          <p *ngIf="Mail?.hasError('required')"> El mail es requerido</p>
-          <p *ngIf="Mail?.hasError('email')"> El mail debe tener un formato valido</p>
-        </div> -->
-        <input name="link" placeholder="Coloca el link del proyecto" formControlName="link" class="name"/>
+        <input name="descripcion" placeholder="modifica la descripcion" formControlName="descripcion" class="name" [(ngModel)]="proyecto.descripcion"/>
+          <p *ngIf="Descripcion?.hasError('required') && Descripcion.touched">La descripcion es requerida.</p>
+        
+        <input name="link" placeholder="Coloca el link del proyecto" formControlName="link" class="name" [(ngModel)]="proyecto.url" />
         <input name="submit" class="btn" type="submit" value="Enviar" />
-    </div>
-    <div *ngIf="modificarToggle == true">
-        <input name="Nombre" placeholder="agrega el nombre" formControlName="nombre" class="name" required />
-        <!-- <div *ngIf= "Nombre?.errors && Nombre?.touched">
-          <p *ngIf="Nombre?.hasError('required')"> El Nombre es requerido</p>
-          <p *ngIf="Nombre?.hasError('minLength')"> El Nombre debe tener al menos 4 caracteres</p>
-        </div> -->
-    
-        <input name="descripcion" placeholder="agrega una descripcion" formControlName="decripcion" class="name"/>
-        <!-- <div *ngIf= "Mail?.errors && Mail?.touched">
-          <p *ngIf="Mail?.hasError('required')"> El mail es requerido</p>
-          <p *ngIf="Mail?.hasError('email')"> El mail debe tener un formato valido</p>
-        </div> -->
-        <input name="link" placeholder="Coloca el link del proyecto" formControlName="link" class="name"/>
-        <input name="submit" class="btn" type="submit" value="Enviar" />
-    </div>
+
       </form>
     </div>
 

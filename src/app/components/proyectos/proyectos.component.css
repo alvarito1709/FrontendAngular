@@ -25,3 +25,9 @@
     color: whitesmoke;
     
 }
+
+#modificar{
+    float: right;
+    color: black;
+    cursor: pointer;
+}

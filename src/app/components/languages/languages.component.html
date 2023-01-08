@@ -17,9 +17,9 @@
                         create
                         </span>
                       </div>
-                <div *ngIf="delete == true"> <button type="button" class="btn-close btn-close-white" aria-label="Close" id="closeExperiencia"></button></div>
+                <div *ngIf="delete == true"> <button type="button" class="btn-close btn-close-white" aria-label="Close" id="closeExperiencia" (click)="eliminarSkill(habilidades.id)"></button></div>
                 <h5 class="title">{{habilidades.nombre}}</h5>
-                <div class="progress" attr.data-percentage = "{{habilidades.porcentaje}}">
+                <div class="progress" attr.data-percentage = "{{habilidades.progreso}}">
                     <span class="progress-left">
                         <span class="progress-bar"></span>
                     </span>
@@ -28,7 +28,7 @@
                     </span>
                     <div class="progress-value">
                         <div>
-                            {{habilidades.porcentaje}}%<br>
+                            {{habilidades.progreso}}%<br>
                             <span>completado</span>
                         </div>
                     </div>
