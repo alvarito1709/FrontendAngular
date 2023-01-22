@@ -1,7 +1,7 @@
 <!-- Componente de soft skills con los circulos de progreso -->
 <hr>
     <div class="container db" >
-        <div id="iconos"><span class="material-icons" (click)="modificarSkills()">
+        <div id="iconos" *ngIf="loged == true"><span class="material-icons" (click)="modificarSkills()">
             create
             </span>
             <span class="material-icons" (click)="deleteSkill()">

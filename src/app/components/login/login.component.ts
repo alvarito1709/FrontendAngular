@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/service/modal.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +11,15 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
+  usuario: string;
+  password: string;
 
-  constructor(private modal:ModalService, private builder:FormBuilder) { 
+  constructor(private modal:ModalService, private builder:FormBuilder,
+    private loged:LoginService) { 
     this.form = this.builder.group(
       {
-        usuario:['', Validators.required, Validators.minLength(6)],
-        contraseña:['', Validators.required, Validators.minLength(6), Validators.pattern('[a-zA-Z.,]')]
+        usuario:['', [Validators.required, Validators.minLength(6)]],
+        contraseña:['', [Validators.required, Validators.minLength(6)]]
       }
     )
   }
@@ -38,12 +42,20 @@ export class LoginComponent implements OnInit {
   onEnviar(event:Event){
     event.preventDefault;
 
-    if (this.form.valid){
-      alert("¡Gracias! pronto estaré en contacto con usted")
+    if (this.form.valid && this.usuario == "admin1" && this.password == "Admin123."){
+      this.login(this.form.value);
+      alert("Usuario logueado con exito.")
+      this.closeModal();
+      window.location.reload();
     }
     else {
       this.form.markAllAsTouched();
+      alert('Alguno de los datos es erroneo.')
     }
+  }
+
+  login(objeto:any){
+    return this.loged.login(objeto);
   }
 
 }

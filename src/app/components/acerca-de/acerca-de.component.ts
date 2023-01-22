@@ -4,6 +4,7 @@ import { Experiencia } from 'src/app/entidades/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 import { Educacion } from 'src/app/entidades/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -19,11 +20,16 @@ export class AcercaDeComponent implements OnInit {
   editarEducacion: boolean = false;
   experiencias: Experiencia []=[];
 
-  constructor( private modal:ModalService, public sExperiencia:ExperienciaService, public sEducacion: EducacionService) { }
+  loged: boolean = false;
+
+  constructor( private modal:ModalService, public sExperiencia:ExperienciaService,
+     public sEducacion: EducacionService, private loginS: LoginService) { }
 
   ngOnInit(): void {
     this.llamarExperiencia();
     this.llamarEducacion();
+
+    this.loged = this.logueado();
     
   }
 
@@ -79,6 +85,18 @@ export class AcercaDeComponent implements OnInit {
     window.location.reload();
     return alert ("educacion eliminada con exito");
   }
+
+  // Metodo para el login
+  logueado(): boolean{
+    var data 
+    data = this.loginS.logueado;
+    if (data === "true"){
+      return true;
+    }
+    else{
+      return false;
+    }
+    }
 
 
 

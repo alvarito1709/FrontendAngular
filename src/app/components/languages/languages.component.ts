@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/service/login.service';
 import { ModalService } from 'src/app/service/modal.service';
 import { SoftSkillService } from 'src/app/service/soft-skill.service';
 import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.service';
@@ -13,11 +14,14 @@ export class LanguagesComponent implements OnInit {
   porcentajeCompleto: any;
   delete: boolean = false;
   editarSkill: boolean = false;
+  loged: boolean = false;
 
-  constructor(private Sskill: SoftSkillService, private modal: ModalService) { }
+  constructor(private Sskill: SoftSkillService, private modal: ModalService,
+    private loginS: LoginService) { }
 
   ngOnInit(): void {
    this.llamarSkill();
+   this.loged = this.logueado();
   }
   takePercentage(){
     return this.porcentajeCompleto = this.habilidad.porcentaje;
@@ -48,5 +52,18 @@ export class LanguagesComponent implements OnInit {
      
     
   }
+
+  //Metodo para el login
+
+  logueado(): boolean{
+    var data 
+    data = this.loginS.logueado;
+    if (data === "true"){
+      return true;
+    }
+    else{
+      return false;
+    }
+    }
 
 }

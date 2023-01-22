@@ -3,7 +3,7 @@
 <hr>
 <h3 id="subtituloExperiencia">Experiencia</h3>
   <section class="container" >
-    <div id="iconos"><span class="material-icons" (click)="desplegarEditarExperiencia()">
+    <div id="iconos" *ngIf="loged == true"><span class="material-icons" (click)="desplegarEditarExperiencia()">
         create
         </span>
         <span class="material-icons" (click)="desplegarDelete()">
@@ -43,7 +43,7 @@
 <!-- Seccion Educación -->
 <h3 id="subtituloExperiencia">Educación</h3>
 <section class="container">
-  <div id="iconos"><span class="material-icons" (click)="desplegarEditarEducacion()">
+  <div id="iconos" *ngIf="loged == true"><span class="material-icons" (click)="desplegarEditarEducacion()">
     create
     </span>
     <span class="material-icons" (click)="desplegarDeleteEducacion()">

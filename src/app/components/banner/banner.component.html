@@ -23,7 +23,7 @@
 
             <!-- imagen computadora -->
             <div class="col-2 align-self-center order-3">
-               <div id="iconos"><span class="material-icons" (click)="modificarInfo()">
+               <div id="iconos" *ngIf="loged == true"><span class="material-icons" (click)="modificarInfo()">
                 create
                 </span>
                 </div> 

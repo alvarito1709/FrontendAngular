@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/service/login.service';
 import { ModalService } from 'src/app/service/modal.service';
 import { ProyectoService } from 'src/app/service/proyecto.service';
 import { AcercaDeServiceService } from '../serviceAcercaDe/acerca-de-service.service';
@@ -12,13 +13,16 @@ export class ProyectosComponent implements OnInit {
   proyecto: any;
   delete: boolean = false;
   modificarToggle: boolean = false;
+  loged: boolean = false;
 
-  constructor(private sProyecto:ProyectoService, private modal:ModalService) { }
+  constructor(private sProyecto:ProyectoService, private modal:ModalService,
+    private loginS:LoginService) { }
 
   ngOnInit(): void {
     this.sProyecto.list().subscribe(data=>(
       this.proyecto = data
     ));
+    this.loged = this.logueado();
   }
   modificar(){
     this.modificarToggle = !this.modificarToggle;
@@ -36,5 +40,17 @@ export class ProyectosComponent implements OnInit {
     window.location.reload();
     this.sProyecto.borrarProyecto(id).subscribe();
   }
+
+  //Metodo para el login
+  logueado(): boolean{
+    var data 
+    data = this.loginS.logueado;
+    if (data === "true"){
+      return true;
+    }
+    else{
+      return false;
+    }
+    }
 
 }

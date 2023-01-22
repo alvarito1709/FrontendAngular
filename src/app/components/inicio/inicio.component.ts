@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Admin } from 'src/app/entidades/admin';
+import { AdminService } from 'src/app/service/admin.service';
 import { ModalService } from 'src/app/service/modal.service';
 
 @Component({
@@ -18,7 +20,8 @@ export class InicioComponent implements OnInit {
   agregarExperiencia: boolean = false;
   agregarEducacion: boolean = false;
 
-  constructor(private modal: ModalService) { }
+  constructor(private modal: ModalService, private adm:AdminService) { }
+
 
   ngOnInit(): void {
     this.modal.$modal.subscribe((valor => this.modalSwitch = valor));
@@ -31,6 +34,8 @@ export class InicioComponent implements OnInit {
     this.modal.$proyecto.subscribe((valor => this.agregarProyecto = valor));
     this.modal.$agregarExperiencia.subscribe((valor => this.agregarExperiencia = valor));
     this.modal.$agregarEducacion.subscribe((valor => this.agregarEducacion = valor));
+
   }
+
 
 }

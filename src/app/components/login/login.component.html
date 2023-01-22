@@ -5,14 +5,14 @@
             <h2>Login</h2>
             <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
             <div class="user-box">
-                <input type="text" formControlName="usuario" required="">
+                <input type="text" formControlName="usuario" required="" [(ngModel)]="usuario">
                 <label>Usuario</label>
             </div>
             <div *ngIf="Usuario?.errors && Usuario?.touched">
                 <p>El usuario en invalido</p>
             </div>
             <div class="user-box">
-                <input type="password" formControlName="contraseña" required="">
+                <input type="password" formControlName="contraseña" required="" [(ngModel)]="password">
                 <label>Contraseña</label>
             </div>
             <div *ngIf="Password?.errors && Password?.touched">
