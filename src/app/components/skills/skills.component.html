@@ -14,7 +14,7 @@
         </div> 
             <div *ngFor="let skills of skill">
     
-    <div (click)="eliminarSkill(skills.id)"><button type="button" *ngIf="delete == true" class="btn-close btn-close-white" aria-label="Close" id="closeExperiencia" ></button>
+    <div (click)="eliminarSkill(skills.id)"><button type="button" *ngIf="delete == true" class="btn-close btn-close-dark" aria-label="Close" id="closeExperiencia" ></button>
     </div> 
     <div>
     <span *ngIf="editarSkill == true" id="iconoEditar" class="material-icons" [routerLink]="['skillModal/', skills.id]">

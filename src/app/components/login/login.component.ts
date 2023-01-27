@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
   onEnviar(event:Event){
     event.preventDefault;
 
-    if (this.form.valid && this.usuario == "admin1" && this.password == "Admin123."){
+    if (this.form.valid && this.usuario == "admin1" && this.password == "admin123"){
       this.login(this.form.value);
       alert("Usuario logueado con exito.")
       this.closeModal();

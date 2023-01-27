@@ -3,32 +3,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@1&display=swap" rel="stylesheet">
 <div class="container">
     <div class="row" *ngFor="let mostrarInfo of persona">
-        <div class="col-8 align-self-center order-2">
-            <!-- informacion -->
+        <!-- imagen computadora -->
+        <div>
+            <div id="iconos" *ngIf="loged == true"><span class="material-icons" (click)="modificarInfo()">
+             create
+             </span>
+             </div> 
+             <img [src]="mostrarInfo.banner" alt="computadora" id="imagen_banner">
+             
+         </div>
+        <div class="col">
+           
             <div class="saludo" >
-               <h2 id="primeraLinea"> {{mostrarInfo.titulo}} </h2>
+               
                <!-- foto de perfil -->
                 <div class="col-2 align-self-end order-1">
                     <section class="profilePic">
                         <img [src]="mostrarInfo.foto" alt="imagen de perfil" id="imagen_de_perfil">
                     </section>  
                     </div>
-                <h3 id="segundaLinea">{{mostrarInfo.descripcion}} </h3>
+                     <!-- informacion -->
+                     
+                    <p id="primeraLinea"> {{mostrarInfo.titulo}} </p>
+                <div class="row justify-content-center"><p class="col-6"  id="segundaLinea">{{mostrarInfo.descripcion}} </p></div>
+         
                 
             <h3 id="Name">
             {{mostrarInfo.nombre}}
             </h3>
             </div>
-            </div>
-
-            <!-- imagen computadora -->
-            <div class="col-2 align-self-center order-3">
-               <div id="iconos" *ngIf="loged == true"><span class="material-icons" (click)="modificarInfo()">
-                create
-                </span>
-                </div> 
-                <img [src]="mostrarInfo.banner" alt="computadora" id="imagen_banner">
-                
             </div>
     </div>
 </div>

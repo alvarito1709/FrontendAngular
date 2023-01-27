@@ -12,7 +12,7 @@ export class LoginService {
 
    login(obj:any){
     
-    if(obj.usuario == "admin1" && obj.contraseña == "Admin123."){
+    if(obj.usuario == "admin1" && obj.contraseña == "admin123"){
       window.sessionStorage.setItem("logueado", "true")
     }
     else{

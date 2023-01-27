@@ -1,10 +1,10 @@
 .container{
-    margin-top: 6%;
-    margin-bottom: 6%;
+    margin-top: 1%;
+    margin-bottom: 4%;
 }
 .material-icons{
-    color: whitesmoke;
-    font-size: 120%;
+    color: #181a1b;
+    font-size: 22px;
     display: flex;
 }
 #iconos {
@@ -19,10 +19,10 @@
     
 }
 #subtituloExperiencia{
-    margin-left: 16%;
+    margin-left: 12%;
     font-style: italic;
     margin-bottom: 20px;
-    color: whitesmoke;
+    color: #181a1b;
     
 }
 
@@ -31,3 +31,4 @@
     color: black;
     cursor: pointer;
 }
+

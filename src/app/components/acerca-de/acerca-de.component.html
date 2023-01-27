@@ -19,8 +19,8 @@
           create
           </span>
         </div>
-        <div *ngIf="delete == true"> <button type="button" class="btn-close btn-close-white" aria-label="Close" id="closeExperiencia" (click)="borrarExperiencia(data.id)" ></button></div>
-       <div class="card text-white bg-dark mb-3" id="cardID" style="width: 15rem; ">
+        <div *ngIf="delete == true"> <button type="button" class="btn-close btn-close-dark" aria-label="Close" id="closeExperiencia" (click)="borrarExperiencia(data.id)" ></button></div>
+       <div class="card text-white bg-secondary mb-3" id="cardID" style="width: 15rem; ">
          <img [src]="data.imagen" class="card-img-top" alt="Logo Argentina Programa" >
            <div class="card-body">
              <h5 class="card-title">{{data.titulo}}</h5>
@@ -28,7 +28,7 @@
              <br> 
              {{data.periodoComienzo}} - {{data.periodoFinal}}
              </p>
-             <a href= "{{data.link}}" target="_blank" class="btn btn-secondary">{{data.titulo}}</a>
+             <a href= "{{data.link}}" target="_blank" class="btn btn-dark">{{data.titulo}}</a>
            </div>
     </div>
   </div>
@@ -59,15 +59,15 @@
         create
         </span>
       </div>
-      <div *ngIf="deleteEducacion == true"> <button type="button" class="btn-close btn-close-white" aria-label="Close" id="close" (click)="borrarEducacion(educacionActual.id)"></button></div>
-     <div class="card text-white bg-dark mb-3" id="cardID" style="width: 18rem;">
-       <img [src]="educacionActual.imagen" class="card-img-top" alt="Logo Argentina Programa">
+      <div *ngIf="deleteEducacion == true"> <button type="button" class="btn-close btn-close-dark" aria-label="Close" id="close" (click)="borrarEducacion(educacionActual.id)"></button></div>
+     <div class="card text-white bg-secondary mb-3" id="cardID" style="width: 16.5rem; height: 23rem;">
+       <img [src]="educacionActual.imagen" class="card-img-top" alt="{{educacionActual.descripcion}}">
          <div class="card-body">
            <h5 class="card-title">{{educacionActual.tituloObtenido}}</h5>
            <p class="card-text">{{educacionActual.descripcion}}
            <br> {{educacionActual.periodoComienzo}} - {{educacionActual.periodoFinal}}
            </p>
-           <a href={{educacionActual.link}} target="_blank" class="btn btn-secondary">{{educacionActual.tituloObtenido}}</a>
+           <a href={{educacionActual.link}} target="_blank" class="btn btn-dark">{{educacionActual.tituloObtenido}}</a>
            </div>
    </div>
   </div>

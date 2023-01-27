@@ -45,6 +45,7 @@
     margin: 10%;
    text-align: center;
    border-color: #181a1b;
+   border: inset;
    
    
 }
@@ -53,7 +54,7 @@
 #subtituloExperiencia{
     margin-left: 10%;
     font-style: italic;
-    color: whitesmoke;
+    color: #333333;
     
 }
 hr{
@@ -63,7 +64,7 @@ hr{
     margin-left: 15%;
 }
 .material-icons{
-    color:  whitesmoke;
+    color:  #181a1b;
     font-size: 22px;
     
     
@@ -81,6 +82,7 @@ cursor: pointer;
     object-fit: cover;
     max-height: 175px;
     min-height: 175px;
+    border: 1px #181a1b;
     
 }
 #close{
