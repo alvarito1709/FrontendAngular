@@ -7,7 +7,7 @@ import { Experiencia } from '../entidades/experiencia';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  url = 'http://localhost:8080/experiencia'
+  url: string = "https://portfolioback-alvarito1709.koyeb.app/experiencia";
 
   constructor(private http:HttpClient) {  }
 

@@ -7,7 +7,7 @@ import { Contacto } from '../entidades/contacto';
   providedIn: 'root'
 })
 export class ContactoService {
-  url = 'http://localhost:8080/contacto';
+  url: string = "https://portfolioback-alvarito1709.koyeb.app/contacto";
 
   constructor(private http:HttpClient) { }
 

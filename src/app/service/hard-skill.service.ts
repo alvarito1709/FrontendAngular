@@ -8,7 +8,7 @@ import { HardSkill } from '../entidades/hard-skill';
 })
 export class HardSkillService {
 
-  url = 'http://localhost:8080/hardskill';
+  url: string = "https://portfolioback-alvarito1709.koyeb.app/hardskill";
 
   constructor(private http:HttpClient) { }
 

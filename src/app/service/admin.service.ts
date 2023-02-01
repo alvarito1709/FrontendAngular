@@ -8,7 +8,7 @@ import { Admin } from '../entidades/admin';
 })
 export class AdminService {
 
-  url = 'http://localhost:8080/admin';
+  url: string = "https://portfolioback-alvarito1709.koyeb.app/admin";
 
   constructor(private http:HttpClient) { }
 

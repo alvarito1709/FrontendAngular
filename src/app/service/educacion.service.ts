@@ -8,7 +8,7 @@ import { Educacion } from '../entidades/educacion';
 })
 export class EducacionService {
 
-  url = 'http://localhost:8080/educacion';
+  url: string = "https://portfolioback-alvarito1709.koyeb.app/educacion";
 
   constructor(private http:HttpClient) { }
 

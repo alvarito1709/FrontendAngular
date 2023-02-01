@@ -7,7 +7,7 @@ import { SoftSkill } from '../entidades/soft-skill';
   providedIn: 'root'
 })
 export class SoftSkillService {
-  url = "http://localhost:8080/soft"
+  url: string = "https://portfolioback-alvarito1709.koyeb.app/soft";
 
   constructor(private http:HttpClient) { }
 

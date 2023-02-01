@@ -7,7 +7,7 @@ import { Persona } from '../entidades/persona';
   providedIn: 'root'
 })
 export class PersonaService {
-  url = "http://localhost:8080/persona"
+  url: string = "https://portfolioback-alvarito1709.koyeb.app/persona";
 
   constructor(private http:HttpClient) { }
 
