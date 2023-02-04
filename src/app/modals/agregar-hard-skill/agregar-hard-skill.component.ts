@@ -38,7 +38,7 @@ export class AgregarHardSkillComponent implements OnInit {
     if(this.form.valid){
       this.agregarSkill()
       alert('dato creado con exito.');
-      window.location.reload();
+      window.location.href ='';
     }
     else{
       alert('No se pudo crear skill, verifique los datos.');
@@ -63,6 +63,7 @@ export class AgregarHardSkillComponent implements OnInit {
   agregarSkill(){
     const skill = new HardSkill (this.nombre, this.porcentaje, this.color, this.logo);
     this.sSkill.agregarSkill(skill).subscribe(data => alert('Skill creado con exito'));
+    window.location.reload();
   }
 
 }

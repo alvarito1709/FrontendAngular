@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/entidades/persona';
 import { ModalService } from 'src/app/service/modal.service';
 import { PersonaService } from 'src/app/service/persona.service';
@@ -12,6 +13,7 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 export class ModificarInfoComponent implements OnInit {
   form: FormGroup;
+  info: Persona = null;
   titulo: string = '';
   descripcion: string = '';
   nombre: string = '';
@@ -21,7 +23,8 @@ export class ModificarInfoComponent implements OnInit {
 
   modificarToggle: boolean = false;
 
-  constructor(private builder:FormBuilder, private modal:ModalService, private sPersona:PersonaService ) {
+  constructor(private builder:FormBuilder, private modal:ModalService,
+     private sPersona:PersonaService, private route:ActivatedRoute, private router:Router ) {
     this.form = this.builder.group(
       {
         titulo:['',[Validators.required]],
@@ -34,15 +37,19 @@ export class ModificarInfoComponent implements OnInit {
     )
    }
   ngOnInit(): void {
+    const id = this.route.snapshot.params['id'];
+    this.sPersona.verPersona(id).subscribe(data =>{
+      this.info = data
+    })
   }
   onEnviar(event:Event){
     event.preventDefault;
 
     if(this.form.valid){
       
-      this.crearInfo();
-      alert("Datos de persona creado exitosamente.");
-      this.closeModal();
+      this.editarInfo();
+      alert("Datos modificados exitosamente.");
+      window.location.href='';
     }
     else{
       this.form.markAllAsTouched();
@@ -73,6 +80,15 @@ export class ModificarInfoComponent implements OnInit {
     this.sPersona.editarPersona(perso, id).subscribe(data => {alert("persona añadida") 
     window.location.reload();
   })
+
+  }
+
+  editarInfo(){
+
+    const id = this.route.snapshot.params['id'];
+    this.sPersona.editarPersona(this.info, id).subscribe(data =>{
+       this.info = data
+      });
 
   }
  

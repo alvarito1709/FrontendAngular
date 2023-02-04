@@ -41,7 +41,7 @@ export class AgregarEducacionComponent implements OnInit {
     if (this.form.valid){
       this.crearEducacion();
       alert("Experiencia creada con exito.");
-      this.closeModal();
+      window.location.reload();
       
     }
     else {
@@ -87,7 +87,7 @@ export class AgregarEducacionComponent implements OnInit {
  
   crearEducacion(): void{
    const educacion = new Educacion ( this.descripcion,this.tituloObtenido, this.periodoComienzo, this.periodoFinal, this.imagen, this.link);
-    this.sEducacion.agregarEducacion(educacion).subscribe(data =>{alert ("experiencia agregada correctamente")});
+    this.sEducacion.agregarEducacion(educacion).subscribe(data =>{alert ("dato educacion agregado correctamente")});
     window.location.reload();
   }
 

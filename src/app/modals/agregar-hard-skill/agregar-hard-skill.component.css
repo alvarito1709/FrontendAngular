@@ -12,7 +12,7 @@ form {
     margin-left:auto;
     margin-right:auto;
     width: 25%;
-    height: 75%;
+    height: 55%;
     padding:30px;
     padding-top: 1%;
     border: 1px solid rgba(0,0,0,.2);
@@ -175,7 +175,7 @@ input:focus, textarea:focus {
     position: fixed;
     top: 0;
     left: 0;
-    height: 110vh;
+    height: 100vh;
     width: 100vw;
     transition: all .30s;
     display: flex;
