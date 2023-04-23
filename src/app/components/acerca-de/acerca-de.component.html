@@ -1,77 +1,80 @@
 
 <!-- Seccion "experiencia" -->
 <hr>
-<h3 id="subtituloExperiencia">Experiencia</h3>
-  <section class="container" >
-    <div id="iconos" *ngIf="loged == true"><span class="material-icons" (click)="desplegarEditarExperiencia()">
-        create
+
+
+<div id="iconos" *ngIf="loged == true"><span class="material-icons" (click)="desplegarEditarExperiencia()">
+  create
+  </span>
+  <span class="material-icons" (click)="desplegarDelete()">
+      delete_forever
+      </span>
+      <span class="material-icons" (click)="desplegarAgregarExperiencia()">
+        add_circle_outline
         </span>
-        <span class="material-icons" (click)="desplegarDelete()">
-            delete_forever
-            </span>
-            <span class="material-icons" (click)="desplegarAgregarExperiencia()">
-              add_circle_outline
-              </span>
-          </div> 
-    <div class="row " id="carta">
-      <div class="col-md-6 col-sm-6 col-lg-3" *ngFor="let data of experiencias">
-        <div id="iconos" *ngIf="editarExperiencia == true"><span class="material-icons" [routerLink]="['/experienciaModal', data.id]">
-          create
-          </span>
-        </div>
-        <div *ngIf="delete == true"> <button type="button" class="btn-close btn-close-dark" aria-label="Close" id="closeExperiencia" (click)="borrarExperiencia(data.id)" ></button></div>
-       <div class="card text-white bg-secondary mb-3" id="cardID" style="width: 15rem; ">
-         <img [src]="data.imagen" class="card-img-top" alt="Logo Argentina Programa" >
-           <div class="card-body">
-             <h5 class="card-title">{{data.titulo}}</h5>
-             <p class="card-text"> {{data.descripcion}}
-             <br> 
-             {{data.periodoComienzo}} - {{data.periodoFinal}}
-             </p>
-             <a href= "{{data.link}}" target="_blank" class="btn btn-dark">{{data.titulo}}</a>
-           </div>
+    </div> 
+<div class="contenedor">
+  <h3 id="subtituloExperiencia">Experiencia</h3>
+  <br>
+  <div *ngFor="let experiencia of experiencias">
+    <div id="iconos" *ngIf="editarExperiencia == true"><span class="material-icons" [routerLink]="['/experienciaModal', experiencia.id]">
+      create
+      </span>
     </div>
+    <div *ngIf="delete == true">
+<button type="button" class="btn-close btn-close-dark" aria-label="Close" id="closeExperiencia" (click)="borrarExperiencia(experiencia.id)" >
+</button>
+</div>
+    <a href="{{experiencia.link}}" target="_blank"><p class="descripcion">{{experiencia.titulo}}</p></a>
+    <p class="titulo">{{experiencia.descripcion}} ({{experiencia.periodoComienzo}}/{{experiencia.periodoFinal}})</p>
+    <p class="responsabilidades">{{experiencia.responsabilidades}}</p>
+    <div class="contenedorImagen"><img [src]="experiencia.imagen" alt="{{experiencia.descripcion}}" class="imagen"></div>
+    <hr id="lineaFinal">
   </div>
- 
- </div>
- 
-</section>
+  
+    
+      <a href="https://www.dl.dropboxusercontent.com/s/i2whwvhupkuf243/curriculoDEV.pdf?dl=0" download="CurriculoAlvaroOrtiz">
+        <button class="descargarCurriculo">Descarga mi curriculo actualizado 
+          <span class="material-icons" id="download">
+            cloud_download
+            </span>
+        </button> 
+      </a>
+
+</div>
 
 <hr>
 
 
 <!-- Seccion Educación -->
-<h3 id="subtituloExperiencia">Educación</h3>
-<section class="container">
-  <div id="iconos" *ngIf="loged == true"><span class="material-icons" (click)="desplegarEditarEducacion()">
-    create
-    </span>
-    <span class="material-icons" (click)="desplegarDeleteEducacion()">
-        delete_forever
+<div id="iconos" *ngIf="loged == true"><span class="material-icons" (click)="desplegarEditarEducacion()">
+  create
+  </span>
+  <span class="material-icons" (click)="desplegarDeleteEducacion()">
+      delete_forever
+      </span>
+      <span class="material-icons" (click)="desplegarAgregarEducacion()">
+        add_circle_outline
         </span>
-        <span class="material-icons" (click)="desplegarAgregarEducacion()">
-          add_circle_outline
-          </span>
-      </div> 
-  <div class="row" >
-    <div class="col-md-6 col-sm-6 col-lg-4" *ngFor="let educacionActual of educacion">
-      <div id="iconos" *ngIf="editarEducacion == true"><span class="material-icons" [routerLink]="['/educacionModal', educacionActual.id]">
-        create
-        </span>
-      </div>
-      <div *ngIf="deleteEducacion == true"> <button type="button" class="btn-close btn-close-dark" aria-label="Close" id="close" (click)="borrarEducacion(educacionActual.id)"></button></div>
-     <div class="card text-white bg-secondary mb-3" id="cardID" style="width: 15rem; height: 23rem;">
-       <img [src]="educacionActual.imagen" class="card-img-top" alt="{{educacionActual.descripcion}}">
-         <div class="card-body">
-           <h5 class="card-title">{{educacionActual.tituloObtenido}}</h5>
-           <p class="card-text">{{educacionActual.descripcion}}
-           <br> {{educacionActual.periodoComienzo}} - {{educacionActual.periodoFinal}}
-           </p>
-           <a href={{educacionActual.link}} target="_blank" class="btn btn-dark">{{educacionActual.tituloObtenido}}</a>
-           </div>
-   </div>
-  </div>
+    </div> 
+<div class="contenedor">
+  <h3 id="subtituloExperiencia">Educacion</h3>
+  <br>
+  <div *ngFor="let educ of educacion">
+    <div id="iconos" *ngIf="editarEducacion == true"><span class="material-icons" [routerLink]="['/educacionModal', educ.id]">
+      create
+      </span>
+    </div>
+    <div *ngIf="deleteEducacion == true">
+<button type="button" class="btn-close btn-close-dark" aria-label="Close" id="closeExperiencia" (click)="borrarEducacion(educ.id)" >
+</button>
 </div>
-
-</section>
+    <a href="{{educ.link}}" target="_blank"><p class="descripcion">{{educ.titulo}}</p></a>
+    <p class="titulo">{{educ.descripcion}} ({{educ.periodoComienzo}}/{{educ.periodoFinal}})</p>
+    <p class="responsabilidades">{{educ.contenido}}</p>
+    <div class="contenedorImagen"><img [src]="educ.imagen" alt="{{educ.descripcion}}" class="imagen"></div>
+    <hr id="lineaFinal">
+  </div>
+  
+</div>
 

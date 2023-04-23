@@ -24,6 +24,7 @@
           <p *ngIf="Foto?.hasError('required')"> La foto es requerida</p>
         </div>
         <input name="link" placeholder="Agrega el link de la empresa" formControlName="link" [(ngModel)]="link" class="name"/>
+        <input name="responsabilidades" placeholder="Describe tus responsabilidades" formControlName="responsabilidades" [(ngModel)]="responsabilidades" class="name"/>
         <input name="submit" class="btn" type="submit" value="Enviar" />
       </form>
     </div>

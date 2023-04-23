@@ -18,6 +18,7 @@ export class AgregarEducacionComponent implements OnInit {
   periodoFinal: string;
   imagen: string;
   link: string;
+  contenido: string;
 
   constructor(private builder: FormBuilder, private modal:ModalService, private sEducacion:EducacionService ) {
     this.form = this.builder.group(
@@ -27,7 +28,8 @@ export class AgregarEducacionComponent implements OnInit {
         periodoComienzo:[''],
         periodoFinal:[''],
         imagen:['',[ Validators.required]],
-        link: ['',]
+        link: ['',],
+        contenido: ['',[Validators.required]]
         
       }
     )
@@ -72,6 +74,9 @@ export class AgregarEducacionComponent implements OnInit {
   get Link(){
     return this.form.get("link");
   }
+  get Contenido(){
+    return this.form.get("contenido")
+  }
   tituloInvalid(){
     return this.TituloObtenido?.touched && !this.TituloObtenido?.valid;
   }
@@ -86,7 +91,7 @@ export class AgregarEducacionComponent implements OnInit {
 
  
   crearEducacion(): void{
-   const educacion = new Educacion ( this.descripcion,this.tituloObtenido, this.periodoComienzo, this.periodoFinal, this.imagen, this.link);
+   const educacion = new Educacion ( this.descripcion,this.tituloObtenido, this.periodoComienzo, this.periodoFinal, this.imagen, this.link, this.contenido);
     this.sEducacion.agregarEducacion(educacion).subscribe(data =>{alert ("dato educacion agregado correctamente")});
     window.location.reload();
   }

@@ -17,6 +17,7 @@ export class AgregarExperienciaComponent implements OnInit {
   periodoFinal = '';
   foto: string = '';
   link: string = '';
+  responsabilidades: string ='';
 
   constructor(private builder: FormBuilder, private modal:ModalService, private sExperiencia:ExperienciaService ) {
     this.form = this.builder.group(
@@ -26,7 +27,8 @@ export class AgregarExperienciaComponent implements OnInit {
         periodoComienzo:[''],
         periodoFinal:[''],
         foto:['',[ Validators.required]],
-        link: ['',]
+        link: ['',],
+        responsabilidades: ['',[Validators.required]]
         
       }
     )
@@ -71,6 +73,9 @@ export class AgregarExperienciaComponent implements OnInit {
   get Link(){
     return this.form.get("link");
   }
+  get Responsabilidades(){
+    return this.form.get("responsabilidades");
+  }
   tituloInvalid(){
     return this.Titulo?.touched && !this.Titulo?.valid;
   }
@@ -85,7 +90,7 @@ export class AgregarExperienciaComponent implements OnInit {
 
  
   crearExperiencia(): void{
-   const experiencia = new Experiencia (this.titulo, this.descripcion, this.periodoComienzo, this.periodoFinal, this.foto, this.link);
+   const experiencia = new Experiencia (this.titulo, this.descripcion, this.periodoComienzo, this.periodoFinal, this.foto, this.link, this.responsabilidades);
     this.sExperiencia.agregarExperiencia(experiencia).subscribe(data =>{alert ("experiencia agregada correctamente")});
     window.location.reload();
   }
